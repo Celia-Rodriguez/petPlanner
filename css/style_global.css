@@ -1,0 +1,383 @@
+/*Estos son los estilos generales del body, de la cabecera y del footer.*/
+
+/*************************************************************/
+/************************** FUENTES **************************/
+/*************************************************************/
+@font-face {
+    font-family: "Geranium";
+    src: url("../fonts/Geranium.otf");
+}
+
+
+/*************************************************************/
+/********************* ESTILOS GENERALES *********************/
+/*************************************************************/
+*{
+    box-sizing: border-box; /*para que margin y padding no se sumen al ancho de caja caja*/
+    margin: 0; /*margen inicial*/
+    padding: 0; /*padding inicial*/
+}
+
+body{ 
+    font-family: sans-serif; /*fuente genérica del cuerpo*/
+    font-size: 20px; /*tamaño de fuente general*/
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../img/backgroundEjemplo.PNG"); /*fondo de las páginas*/
+}
+
+input[type="date"] {
+    font-family: sans-serif; /*fuente de los input de tipo fecha*/
+}
+
+.tooltip{ /*estilo tooltip*/
+   font-size: 16px !important; /*tamaño del texto*/
+   background-color: white; /*color de fondo*/
+   border: 1px solid #ddd !important; /*borde*/
+   border-radius: 5px !important; /*esquinas redondeadas*/
+   padding: 7px; /*margen interno para separar del borde*/
+   width: 60%; /*ancho*/
+   max-width: 400px; /*ancho máximo*/
+   box-shadow: 0 0 2px #bbb !important;
+   z-index: 100 !important;/*orden de colocación*/
+}
+
+.ui-helper-hidden-accessible{ /*estilos tooltip*/
+    display: none; /*evitamos que se muestre el tooltip al final de la página*/
+}
+
+/*************************************************************/
+/*************************** HEADER **************************/
+/*************************************************************/
+/*estilos de las cabeceras de las páginas*/
+.cabecera{
+    display: flex; /*contenedor flexible*/
+    justify-content: space-around; /*elementos interiores con espacio entre ellos*/
+    height: 90px; /*altura del header*/
+    align-items: center; /*elementos centrados sobre el eje transversal */
+    background-color: white ; /*color del fondo*/
+    border-bottom: 1px solid #43C2D3; /*borde en la parte inferior para separar del cuerpo*/
+    position: fixed; /*posición fija. No se mueve aunque hagas scroll*/
+    width: 100%; /*ancho completo*/
+}
+
+.cabecera .contenedorLogo{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    align-items: center; /*elementos centrados sobre el eje transversal*/
+    text-decoration: none; /*eliminamos subrayado del enlace*/
+}
+
+.cabecera .contenedorLogo .imgLogo{
+    height: 80px;  /*altura del logo*/
+    margin-right: 10px; /*margen a la derecha*/
+}
+
+.cabecera .mainMenu{
+    display: flex; /*contenedor flexible*/
+    align-items: center; /*elementos centrados sobre el eje transversal*/
+}
+
+.cabecera .mainMenu .btnMainMenu{
+    font-size: 50px; /*tamaño de la fuente*/
+    cursor: pointer; /*diseño del puntero al ponerse encima*/
+    background-color: transparent; /*eliminamos el fondo*/
+    border: none; /*eliminamos el borde*/
+    padding: 0 15px; /*añadimos espacio interior a los lados*/
+    display: none; /*ocultamos*/
+}
+
+.cabecera .mainMenu .btnMainMenu:hover{
+    transform: scale(1.3);/*aumentamos el tamaño del texto al pasar por encima*/
+    transition: 0.3s;/*transición al aumentar*/
+}
+
+.cabecera .mainMenu .navLinks{
+    display: flex; /*contenedor flexible*/
+    justify-content: space-around; /*elementos interiores con espacio entre ellos*/
+    list-style: none; /*eliminamos las viñetas de la lista*/
+}
+
+.mainMenu .navLinks .navItem{
+    position: relative; /*posición relativa*/
+}
+
+.mainMenu .navLinks .navItem a{
+    text-decoration: none; /*eliminamos subrayado de enlaces*/
+    padding: 20px; /*añadimos espacio interior*/
+    font-family: "Geranium"; /*fuente del menú*/
+    font-size: 24px; /*tamaño de la fuente*/
+    letter-spacing: 0.05em; /*añadimos espacio entre las letras de los textos del menú*/
+    color: #3d97a3; /*color de la fuente*/
+}
+
+.mainMenu .navLinks .navItem a img{
+    width: 35px; 
+}
+
+.mainMenu .navLinks .navItem:hover{/*estilos al pasar por encima del menú*/
+    transform: scale(1.2); /*aumentamos el tamaño del texto al pasar por encima*/
+    transition: 0.3s; /*transición al aumentar*/
+}
+
+.mainMenu .navLinks .navItem a:hover{/*estilos al pasar por encima del menú*/
+    font-weight: bold; /*texto en negrita al pasar el ratón por encima*/
+    filter: drop-shadow(2px 2px 4px rgb(186, 255, 255)); /*añadimos una sombra*/
+    color: teal; /*cambiamos el color del texto*/
+}
+/************************* FIN HEADER ************************/
+
+
+/*************************************************************/
+/************************ MENU USUARIO ***********************/
+/*************************************************************/
+.mainMenu .navLinks .userMenuItems{
+    position: absolute; /*posición del menú en relación al menú principal*/
+    top: 172%; /*posición desde la parte superior*/
+    left: 0; /*posición desde la izquierda*/
+    background-color: white; /*color de fondo*/
+    font-family: Arial, Helvetica, sans-serif; /*fuente del texto*/
+    border: 1px solid #ccc; /*borde*/
+    border-radius: 5px; /*esquinas redondeadas*/
+    padding: 0; /*margen interior*/
+    list-style-type: none; /*eliminamos las viñetas de la lista*/
+    display: none; /*ocultamos mientras no se pase por encima*/
+}
+
+.mainMenu .navLinks .navItem:hover .userMenuItems{
+    display: block; /*disposición en bloque*/
+}
+.mainMenu .navLinks .navItem .userMenuItems .userItem {
+    padding: 10px 10px; /*añadimos margen interno para dar espacio*/
+}
+
+.mainMenu .navLinks .navItem .userMenuItems .userItem a {
+    text-decoration: none; /*eliminamos el subrayado*/
+    color: #030e0e; /*color del texto*/
+    font-size: 22px; /*tamaño del texto*/
+}
+
+.mainMenu .navLinks .navItem .userMenuItems .userItem:hover {/*estilos al pasar por encima del submenú*/
+    color: rgb(3, 14, 14); /*color del texto*/
+    background-color: #41ccdf; /*color del fondo*/
+    box-shadow: 0 0 10px white; /*añadimos sombra*/
+}
+
+.mainMenu .navLinks .navItem .userMenuItems .userItem a:hover{/*estilos al pasar por encima del submenú*/
+    font-weight: normal; /*texto normal (no negrita) al pasar por encima*/
+}
+/********************* FIN MENU USUARIO **********************/
+
+
+/*************************************************************/
+/*********************** SOLO PARA ADMIN *********************/
+/*************************************************************/
+#adminUsuarios{
+    display: none; /*ocultamos esta sección*/
+}
+/******************** FIN SOLO PARA ADMIN ********************/
+
+
+/*************************************************************/
+/*********************** BOTONES SWEETALERT ******************/
+/*************************************************************/
+/*Modificaciones de los botones de la librería SweetAlert*/
+/*botón de confirmación*/
+.swal2-confirm{
+    cursor: pointer; /*como se ve el puntero cuando pasa por encima*/
+    margin: 10px !important; /*márgenes externos*/
+    padding: 7px !important; /*márgenes internos*/
+    font-size: 20px !important; /*tamaño del texto*/
+    width: 100px !important; /*ancho del botón*/
+    background-color: #66dae9 !important; /*color del fondo*/
+    border: 2px solid #3ab8c9 !important; 
+    border-radius: 5px !important; /*esquinas redondeadas*/
+    color: black !important; /*color del texto*/
+}
+
+.swal2-confirm:focus{
+    box-shadow: none !important; /*eliminamos la sombra*/
+}
+
+/*botón cancelar*/
+.swal2-cancel{
+    margin: 10px 5px  !important; /*márgenes externos*/
+    padding: 7px  !important; /*márgenes internos*/
+    font-size: 20px  !important; /*tamaño del texto*/
+    width: 100px  !important; /*ancho del botón*/
+    background-color: rgba(255, 0, 0, 0.4)  !important; /*color del fondo*/
+    border: 2px solid rgba(231, 81, 81, 0.7)  !important; /*modificamos el borde*/
+    border-radius: 5px  !important; /*esquinas redondeadas*/
+    color: black !important; /*color del texto*/
+}
+
+
+/*************************************************************/
+/*************************** FOOTER **************************/
+/*************************************************************/
+.pie{
+    bottom: 0; /*fija posicón del footer*/
+    background-color: white; /*color del fondo*/
+    width: 100%; /*ancho*/
+    border-top: 1px solid #43C2D3; /*borde en la parte inferior para separar del cuerpo*/
+    padding: 20px; /*margenes internos*/
+    min-width: 425px !important; /*ancho mínimo*/
+}
+.pie .pieContenedor{
+    max-width: 1100px;/*ancho máximo*/
+    margin: auto;/*márgenes externos*/
+    display:  flex; /*contenedor flexible*/
+    justify-content: center; /*elementos interiores centrados*/
+    flex-direction: column;/*elementos interiores en columna*/
+}
+.pie .pieLogos, .pie .pieLogosDos{
+    display:  flex; /*contenedor flexible*/
+    justify-content: space-between; /*elementos interiores con espacio entre ellos*/
+    align-items: center; /*centrar verticalmente */
+}
+.pie .pieLogos .pielogo{
+    height: 40px;  /*altura del logo*/
+}
+.pie .pieLogos .rrss{
+    display:  flex; /*contenedor flexible*/
+    justify-content: center; /* centrar horizontalmente */
+    gap: 10px; /* espacio entre las img*/
+}
+.pie .pieLogos .rrss img{
+    cursor: pointer;/*cursor en forma de manita*/
+    height: 30px;  /*altura del logo*/
+    margin: 0px 5px; /*margenes externos*/
+}
+.pie .pieLinks{
+    display:  flex; /*contenedor flexible*/
+    align-items: center; /*centrar verticalmente */
+    margin-top: 20px;/*márgen superior externo*/
+    gap: 50px;
+}
+.pie .pieLinks a{
+    cursor: pointer;/*cursor en forma de manita*/
+    text-decoration: none;/*decoración del texto*/
+    font-size: 16px;/*tamaño de la fuente*/
+    color: #157581;/*color de la letra*/
+    border-bottom: 1px solid transparent;/*borde inferior*/
+}
+.pie .pieLinks p{
+    font-size: 16px;/*tamaño de la fuente*/
+    border-bottom: 1px solid transparent;/*borde inferior*/
+}
+.pie .pieLinks a:hover{
+    color: teal;/*color de la letra*/
+    border-bottom: 1px solid teal;/*borde inferior*/
+}
+/************************* FIN FOOTER ************************/
+
+
+/*************************************************************/
+/******************* ESTILOS MEDIA QUERY  *********************/
+/*************************************************************/
+@media screen and (max-width: 768px) {
+
+/******************* MENU  *********************/    
+    .cabecera{
+        display: flex; /*contenedor flexible*/
+        justify-content: space-between; /*elementos interiores con espacio entre ellos*/
+        height: 70px; /*altura del header*/
+        position: fixed; /*posición fija. No se mueve aunque hagas scroll*/
+        padding: 0 5px; /*añadimos margen interno a los lados para separar del borde*/
+    }
+    
+    .cabecera .contenedorLogo .imgLogo{
+        height: 55px;  /*altura del logo*/
+    }
+
+    .cabecera .mainMenu .btnMainMenu{
+        display: block; /*ocultamos*/
+    }
+    
+    .cabecera .mainMenu .navLinks{ 
+        flex-direction: column; /*colocamos los elementos del menú en columna*/
+        justify-content: center; /*elementos interiores centrados*/
+        background-color: white; /*fondo blanco*/
+        position: fixed; /*fijamos la posición para que no se mueva*/
+        top: 70px; /*posición desde la parte superior*/
+        left: 100%; /*posición desde la izquierda*/
+        width: 100%; /*ancho completo*/
+        align-items: center; /*elementos centrados sobre el eje transversal */
+        transition: left 1.2s; /*transición para que el menú salga de forma suave*/
+        padding: 20px 0; /*añadimos márgenes interiores para que haya más espacio*/
+    }
+    
+    .mainMenu .navLinks .navItem{
+        position: relative; /*posición relativa*/
+        line-height: 30px; /*altura de la línea del texto*/
+        padding: 20px 0; /*márgenes interiores superior e inferior*/
+    }
+
+    .mainMenu .navLinks--visible{ 
+        top: 70px !important; /*posición debajo de la cabecera*/
+        left: 0 !important; /*posición a la izquierda 0 para que se muestre el menú*/
+        visibility: inherit; /*visibilidad*/
+    }
+    
+    .mainMenu .navLinks .navItem a{
+        text-decoration: none; /*eliminamos subrayado de enlaces*/
+        padding: 20px; /*añadimos espacio interior*/
+        font-family: "Geranium"; /*fuente del menú*/
+        font-size: 25px; /*tamaño de la fuente*/
+        letter-spacing: 0.05em; /*añadimos espacio entre las letras de los textos del menú*/
+        color: #3d97a3; /*color de la fuente*/
+    }
+
+    .mainMenu .navLinks .userMenuItems{
+        position: absolute; /*posición del menú en relación al menú principal*/
+        top: 70px; /*posición desde la parte superior*/
+        left: 0; /*posición desde la izquierda*/
+        background-color: white; /*color de fondo*/
+        font-family: Arial, Helvetica, sans-serif; /*fuente del texto*/
+        border: none; /*borde*/
+        border-radius: 0px; /*esquinas redondeadas*/
+        padding: 0; /*margen interior*/
+        display: none; /*ocultamos mientras no se pase por encima*/
+        width: 100%; /*ancho completo*/
+    }
+    
+    .mainMenu .navLinks .navItem:last-child{
+        width: 100%; /*ancho completo*/
+        text-align: center; /*texto centrado*/
+    }
+
+    .mainMenu .navLinks .navItem .userMenuItems .userItem a {
+        text-decoration: none; /*eliminamos el subrayado*/
+        color: #157581; /*color del texto*/
+        font-size: 22px; /*tamaño del texto*/
+    }
+    
+    .mainMenu .navLinks .navItem .userMenuItems .userItem:hover {/*estilos al pasar por encima del submenú*/
+        color: rgb(3, 14, 14); /*color del texto*/
+        background-color: #41ccdf; /*color del fondo*/
+        box-shadow: 0 0 10px white; /*añadimos sombra*/
+    }
+    
+    .mainMenu .navLinks .navItem .userMenuItems .userItem a:hover{/*estilos al pasar por encima del submenú*/
+        font-weight: normal; /*texto normal (no negrita) al pasar por encima*/
+        transition: top 1.2s; /*transición para que el menú salga de forma suave*/
+    }
+/******************* FIN MENU  *********************/  
+
+/******************* FOOTER  *********************/  
+    .pie .pieLinks{
+        gap: 30px; /*espacio entre los elementos*/
+        width: 100%; /*ancho completo*/
+        justify-content: space-around; /*elementos colocados con espacio entre ellos*/
+    }
+    .pie .pieLogosDos{
+        flex-direction: column; /*elementos colocados en columna*/
+    }
+/************************* FIN FOOTER ************************/
+/*modal sel sweetalert*/
+.swal2-container{
+    padding: 2em !important;
+}
+
+.swal2-container .swal2-popup{
+    width: 25em !important;
+}
+}/*media query*/

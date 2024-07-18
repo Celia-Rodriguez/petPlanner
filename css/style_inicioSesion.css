@@ -1,0 +1,173 @@
+/*************************************************************/
+/****************************** MAIN *************************/
+/*************************************************************/
+.principal{
+    max-width: 1000px;/*ancho máximo*/
+    margin: 0 auto; /*margen exterior. auto a los lados para centrar el elemento en pantalla*/
+    padding: 130px 0 40px 0; /*márgenes interiores para dar espacio alrededor*/
+    display: flex; /*contenedor flexible*/
+    justify-content: center; /*elementos centrados longitudinalmente*/
+    align-items: center; /*elementos centrados transversalmente*/
+    min-height: 100%; /*ancho mínimo*/
+}
+
+.principal .contenedorForm{
+    width: 50%; /*ancho del elemento*/
+    margin: auto; /*márgenes externos auto*/
+    background-color: white; /*color del fondo*/
+    padding: 30px; /*márgenes interiores*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    justify-content: center; /*elementos centrados longitudinalmente*/
+    border-radius: 10px; /*esquinas redondeadas*/
+    border: 3px solid #43C2D3; /*borde del elemento*/
+    box-shadow: 0 0 25px #2ba0af; /*sombra para dar aspecto de elevación*/
+}
+
+.principal .contenedorForm .formularioSesion, 
+.principal .contenedorForm .formularioSesion{
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+}
+
+.principal .contenedorForm .formularioSesion .labelForm{
+    color:#333; /*color del texto*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos colocados en línea*/
+    align-items: baseline; /*elementos alineados transversalmente en la línea base*/
+}
+
+.principal .contenedorForm .formularioSesion .iconoInfo{
+    margin-left: 5px; /*margen a la izquierda para dar separación*/
+    width: 20px; /*ancho*/
+    height: 20px; /*altura*/
+    background-color: #43C2D3; /*color del fondo*/
+    border-radius: 30px; /*esquinas redondeadas para formar un círculo*/
+    color: white; /*color del texto*/
+    font-weight: bold; /*texto en negrita*/
+    text-align: center; /*texto alineado al centro*/
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*tipografía del texto*/
+    font-size: 18px; /*tamaño del texto*/
+    cursor: help; /*cuando colocamos encima el cursor aparece una interrogación*/
+}
+
+.principal .contenedorForm .formularioSesion .cajaTexto{
+    margin-bottom: 20px; /*margen inferior para dar espacio*/
+    padding: 7px; /*márgenes internos*/
+    font-size: 20px; /*tamaño de texto*/
+    border-radius: 3px; /*esquinas redondeadas*/
+}
+
+.principal .contenedorForm .formularioSesion .borderCajaTexto{
+    border: 2px solid #aaa !important; /*borde de las cajas de texto*/
+}
+
+.principal .contenedorForm .formularioSesion .error{
+    border: 2px solid red; /*borde de las cajas de texto cuando el contenido es erróneo*/
+}
+
+.principal .contenedorForm .formularioSesion #errorName, 
+.principal .contenedorForm .formularioSesion #errorEmail, 
+.principal .contenedorForm .formularioSesion #errorPassword, 
+.principal .contenedorForm .formularioSesion #errorRepeatPassword, 
+.principal .contenedorForm .formularioSesion #errorLogin, 
+.principal .contenedorForm .formularioSesion #errorCheck,
+.principal .contenedorForm .formularioSesion #errorSecurityQuestion,
+.principal .contenedorForm .formularioSesion #errorSecurityAnswer
+{
+    margin-bottom: 10px; /*margen inferior*/
+    background-color: rgba(255,0,0,0.2); /*color de fondo*/
+    padding: 7px 5px; /*márgenes internos*/
+    border-radius: 3px; /*esquinas redondeadas*/
+    display: none; /*solo lo mostramos cuando se produce un error*/
+}
+
+.principal .contenedorForm .formularioSesion #errorName, 
+.principal .contenedorForm .formularioSesion #errorEmail,
+.principal .contenedorForm .formularioSesion #errorPassword, 
+.principal .contenedorForm .formularioSesion #errorRepeatPassword,
+.principal .contenedorForm .formularioSesion #errorSecurityQuestion,
+.principal .contenedorForm .formularioSesion #errorSecurityAnswer {
+    margin-top: -20px; /*margen superior para pegar al elemento superior (al input)*/
+}
+
+.principal .contenedorForm .btnForm{
+    margin: 10px 0 10px auto; /*márgenes externos*/
+    padding: 7px; /*márgenes internos para separar del borde*/
+    font-size: 20px; /*tamaño de la fuente*/
+    cursor: pointer; /*cambiamos el cursor cuando pasa por encima*/
+    background-color: #66dae9; /*color de fondo*/
+    border: 2px solid #3ab8c9; /*color del borde*/
+    border-radius: 5px;
+}
+
+.principal .contenedorForm .enlaceForm{
+    margin: 8px 0; /*márgenes exteriores*/
+}
+
+.principal .contenedorForm .linea{
+    background-color: #43C2D3; /*color de fondo*/
+    box-shadow: 0 0 3px #43C2D3; /*añadimos una sombra para difuminar los bordes de la línea*/
+    border: none; /*eliminamos el borde*/
+    border-radius: 100px; /*redondeamos las esquinas*/
+    height: 3px; /*altura*/
+    margin: 10px 0 20px 0; /*márgenes exteriores*/
+}
+
+.principal .contenedorForm .contenedorCheck{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos alineados*/
+    margin-top: 5px; /*añadimos margen superior para separar*/
+    margin-bottom: 15px; /*añadimos margen inferior para separar*/
+}
+.principal .contenedorForm .contenedorCheck #checkPrivacy{
+    margin-right: 8px; /*añadimos margen a la derecha para separar*/
+    width: 22px; /*ancho del elemento*/
+    height: 22px; /*altura del elemento*/
+    cursor: pointer; /*cambiamos el cursor cuando pasa por encima*/
+}
+
+.principal .contenedorForm .contenedorCheck #politica{
+    margin-left: 4px; /*añadimos margen a la izquierda para separar*/
+    text-decoration: underline; /*subrayado*/
+    color: teal; /*color del texto del enlace*/
+    cursor: pointer; /*cambiamos el cursor cuando pasa por encima*/
+}
+
+/************************** FIN MAIN *************************/
+
+/*************************************************************/
+/******************* ESTILOS MEDIA QUERY *********************/
+/*************************************************************/
+@media screen and (max-width: 768px){
+    .principal{
+        padding: 90px 0 50px 0; /*márgenes internos*/
+    }
+
+    .principal .contenedorForm{
+        width: 60%; /*ancho del elemento*/
+        min-width: 375px;
+        padding: 30px; /*márgenes interiores*/
+        display: flex; /*contenedor flexible*/
+        flex-direction: column; /*elementos interiores colocados en columna*/
+        justify-content: center; /*elementos centrados longitudinalmente*/
+        border-radius: 10px; /*esquinas redondeadas*/
+        border: 3px solid #43C2D3; /*borde del elemento*/
+        box-shadow: 0 0 25px #2ba0af; /*sombra para dar aspecto de elevación*/
+    }
+
+
+    .principal .contenedorForm .formularioSesion .labelForm,
+    .principal .contenedorForm .formularioSesion .cajaTexto,
+    .principal .contenedorForm .btnForm,
+    .principal .contenedorForm .contenedorCheck{
+        font-size: 18px; /*reducimos un poco el tamaño de la fuente*/
+    }
+
+    .principal .contenedorForm .enlaceForm{
+        font-size: 18px; /*reducimos un poco el tamaño de la fuente*/
+        margin-top: 15px;
+    }
+}
+
+

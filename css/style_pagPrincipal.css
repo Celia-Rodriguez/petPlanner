@@ -1,0 +1,567 @@
+/*************************************************************/
+/****************************** MAIN *************************/
+/*************************************************************/
+.container{
+    max-width: 1200px; /*ancho máximo para que no se haga demasiado grande*/
+    background-color: white; /*color del fondo*/
+    padding: 45px 50px; /*añadimos márgenes internos para separar de los bordes*/
+    margin: 0 auto; /*margen auto a los lados para centrarlo*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    box-shadow: 0 0 5px #1eadc0; /*sombra para dar sensación de elevación*/
+}
+
+.container .cabeceraPrincipal{
+    background-color: #b2e4eb; /*color del fondo*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    justify-content: space-between; /*colocamos dejando espacio entre los elementos*/
+    align-items: center; /*alineamos al centro en la vertical*/
+    padding: 20px 50px; /*márgenes interiores*/  
+    margin-top: 90px;/*margen superior para separar del elemento superior*/
+    border-radius: 15px; /*esquinas redondeadas*/
+}
+.iconoInfo{
+    margin-left: 5px; /*añadimos margen a la izquierda*/
+    width: 20px; /*ancho del elemento*/
+    height: 20px; /*altura del elemento*/
+    background-color: #43C2D3; /*color de fondo*/
+    border-radius: 30px; /*esquinas redondeadas*/
+    color: white; /*color del texto*/
+    font-weight: bold; /*texto en negrita para que se vea mejor*/
+    text-align: center; /*alineamos el texto al centro*/
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*tipografía con serifa*/
+    font-size: 18px; /*tamaño del texto*/
+    cursor: help; /*cuando colocamos encima el cursor aparece una interrogación*/
+    z-index: 100;/*orden de colocación*/
+}
+/************************** USUARIO **************************/
+
+.container .cabeceraPrincipal .usuario{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    justify-content: flex-start; /*colocamos los elementos en el lado izquierdo*/
+    align-items: center; /*centramos en el eje transversal*/
+}
+
+.container .cabeceraPrincipal .usuario .imgUsuario #img{
+    border-radius: 50%; /*damos forma circular*/
+    border: 1px solid lightgray; /*borde*/
+    width: 80px; /*ancho*/
+    height: 80px; /*altura*/
+    margin-right: 20px; /*añadimos espacio a la derecha*/
+    object-fit: cover; /*se redimensiona la imagen para mantener su proporción*/
+}
+
+.container .cabeceraPrincipal .usuario h1{
+    font-size: 46px; /*tamaño del texto*/
+    font-family: "Geranium"; /*fuente del texto*/
+    letter-spacing: 0.1em; /*espacio entre caracteres para facilitar la lectura*/
+}
+
+.container .cabeceraPrincipal .contenedorFecha{
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    justify-content: center; /*colocamos en el centro (eje horizontal)*/
+    align-items: center; /*colocamos en el centro (eje transversal)*/
+    padding: 20px 40px;
+    font-size: 18px;
+}
+
+.container .cabeceraPrincipal .contenedorFecha #diaSemana,
+.container .cabeceraPrincipal .contenedorFecha #fecha{
+    font-family: "Geranium"; /*fuente del texto*/
+    font-size: 24px; /*tamaño del texto*/
+    letter-spacing: 0.1em; /*espacio entre caracteres para facilitar la lectura*/
+}
+
+.container .cuerpoPrincipal{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    justify-content: space-between; /*dejamos espacio entre los elementos*/
+    padding: 50px 0 10px 0; /*márgenes interiores*/
+}
+
+.container .cuerpoPrincipalResponsive{
+    display: flex; /*contenedor flexible*/
+    flex-direction: column !important; /*elementos interiores colocados en columna*/
+    justify-content: center!important; /*elementos centrados en el eje horizontal*/
+    padding: 0; /*eliminamos márgenes interiores*/
+}
+
+.container .cuerpoPrincipal .botonesResponsive{
+    display: none; /*ocultamos si el tamaño de la ventana no es el adecuado*/
+    margin-top: 20px; /*margen superior para separar del elemento anterior*/
+}
+
+.container .cuerpoPrincipal .botonesResponsive button{
+    width: 100%; /*ancho completo*/
+    height: 50px; /*altura*/
+    font-size: 20px; /*tamaño del texto*/
+    border-top-right-radius: 10px; /*esquina superior derecha redondeada*/
+    border-top-left-radius: 10px; /*esquina superior izquierda redondeada*/
+    border: 1px solid #bcecf1; /*borde*/
+    background-color: #d0f0f4; /*color del fondo*/
+    cursor: pointer; /*el cursor cambia cuando pasamos por encima*/
+}
+
+.container .cuerpoPrincipal .botonesResponsive #btnVerRecordatorios{
+    background-color: #ade3e9; /*color del fondo*/
+}
+
+.container .cuerpoPrincipal .botonesResponsive #btnVerMascotas{      
+    border-bottom: transparent;
+}
+
+
+/************************ MASCOTAS ***************************/
+
+.container .cuerpoPrincipal .contenedorMascotas{
+    width: 100%; /*ancho completo*/
+    min-height: 320px; /*altura mínima*/
+    background-color: #d0f0f4; /*color del fondo*/
+    margin-right: 20px; /*añadimos espacio a la derecha*/
+    border-radius: 20px; /*esquinas redondeadas*/
+    padding: 15px; /*márgenes interiores*/
+}
+
+.container .cuerpoPrincipal .tituloYadd{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    padding: 10px 0 20px 0; /*márgenes interiores*/
+    justify-content: space-between; /*colocamos dejando espacio entre los elementos*/
+}
+
+.container .cuerpoPrincipal .tituloYadd h2{
+    font-family: "Geranium"; /*fuente del texto*/
+    font-size: 30px; /*tamaño del texto*/
+    letter-spacing: 0.1em; /*espacio entre caracteres para facilitar la lectura*/
+    text-align: center; /*texto centrado*/
+    padding: 0; /*eliminamos los márgenes interiores*/
+    width: 100%; /*ancho del elemento*/
+}
+
+.container .cuerpoPrincipal .tituloYadd button{
+    min-width: 65px; /*ancho mínimo*/
+    font-size: 35px; /*tamaño del texto*/
+    border-radius: 10px; /*esquinas redondeadas*/
+    font-weight: bold; /*letra en negrita*/
+    color: #009999; /*color del texto*/
+    border: 2px solid #009999; /*borde del botón*/
+    background-image: linear-gradient(to top, #baeaf0, white); /*fondo con degradado lineal*/
+    box-shadow: 0 0 5px white; /*sombra para dar sensación de elevación*/
+    cursor: pointer; /*cambiamos como se ve el puntero cuando pasa por encima*/
+    max-height: 44px; /*altura máxima*/
+}
+
+.container .cuerpoPrincipal .tituloYadd button:hover{
+    box-shadow: 0 0 5px #16c7c7; /*sombra para dar sensación de elevación*/
+    background-image: linear-gradient(to top, white, white); /*color del fondo*/
+}
+
+.container .cuerpoPrincipal .contenedorMascotas .tarjetaMascota{
+    background-image: linear-gradient(to right,rgba(67, 194, 211, 1), rgba(106, 194, 235, 0.9)), url("../img/paws.png"); /*fondo de las etiquetas de las mascotas con color e imagen*/
+    border: 1px solid teal; /*borde*/
+    padding: 10px 20px; /*márgenes internos*/
+    border-radius: 10px; /*esquinas redondeadas*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    justify-content: space-between; /*dejamos espacio entre los elementos*/
+    align-items: center; /*alineamos transversalmente en el centro*/
+    margin-bottom: 10px; /*añadimos espacio debajo*/
+}
+
+.container .cuerpoPrincipal .contenedorMascotas .tarjetaMascota .datosMascota{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    justify-content: flex-start; /*colocamos los elementos en el lado izquierdo*/
+    align-items: center; /*alineamos transversalmente en el centro*/
+}
+
+.container .cuerpoPrincipal .contenedorMascotas .tarjetaMascota .datosMascota .imgMascota{
+    border-radius: 40px; /*esquinas redondeadas*/
+    width: 65px; /*ancho*/
+    height: 65px; /*altura*/
+    border: 2px solid white; /*borde*/
+    object-fit: cover; /*se redimensiona la imagen para mantener su proporción*/
+}
+
+.container .cuerpoPrincipal .contenedorMascotas .tarjetaMascota .datosMascota .nombreMascota{
+    margin-left: 20px; /*añadimos espacio a la izquierda*/
+    font-size: 25px; /*tamaño del texto*/
+    font-weight: normal; /*texto normal (sin negrita)*/
+}
+
+.container .cuerpoPrincipal .contenedorMascotas .tarjetaMascota .iconoMascota{
+    width: 50px; /*ancho*/
+}
+
+/************************ RECORDATORIOS ***************************/
+
+.container .cuerpoPrincipal .contenedorRecordatorios{
+    width: 100%; /*ancho completo*/
+    min-height: 320px; /*altura mínima*/
+    background-color: #d0f0f4; /*color del fondo*/
+    margin-left: 20px; /*añadimos espacio a la izquierda*/
+    border-radius: 20px; /*esquinas redondeadas*/
+    padding: 15px; /*márgenes interiores*/
+}
+
+.container .cuerpoPrincipal .contenedorRecordatorios .tarjetaRecordatorio{
+    padding: 10px 20px; /*márgenes interiores*/
+    border-radius: 10px; /*esquinas redondeadas*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    justify-content: space-between;
+    align-items: center; /*elementos centrados sobre el eje transversal*/
+    margin-bottom: 10px; /*colocamos dejando espacio entre los elementos*/
+    border: 1px solid teal; /*borde*/
+    min-height: 70px; /*altura mínima*/
+}
+
+.container .cuerpoPrincipal .contenedorRecordatorios .fechasReminder{
+    margin-bottom: 7px; /*margen inferior*/
+}
+
+.container .cuerpoPrincipal .contenedorRecordatorios .tarjetaRecordatorio .datosRecordatorio h4{
+    font-size: 18px; /*tamaño del texto*/
+    padding-bottom: 3px; /*añadimos espacio por debajo para separar del texto siguiente*/
+}
+
+.container .cuerpoPrincipal .contenedorRecordatorios .tarjetaRecordatorio .datosRecordatorio h6{
+    font-size: 16px; /*tamaño del texto*/
+    font-weight: normal; /*eliminamos el texto en negrita*/
+}
+
+/********************** MODAL AÑADIR RECORDATORIO **********************/
+.modalAddReminder{
+    background-color: rgba(85, 177, 177,0.5); /*color del fondo*/
+    padding: 50px; /*márgenes internos*/
+    position: fixed; /*posición fija para que no se mueva*/
+    z-index: 2; /*lo ponemos por encima del resto de elementos*/
+    width: 100%; /*ancho completo*/
+    height: 100%; /*altura completa*/
+    top: 0; /*posición desde la parte superior*/
+    left: 0; /*posición desde la izquierda*/
+    display: none; /*no lo mostramos hasta que sea necesario*/
+    justify-content: center; /*alineación horizontal en el centro*/
+    align-content: center;  /*alineación vertical en el centro*/
+}
+
+.modalAddReminder .contenedorForm{
+    width: 600px; /*ancho*/
+    margin: auto; /*márgenes externos automáticos*/
+    background-color: white; /*color del fondo*/
+    padding: 30px; /*márgenes internos para dar espacio en el borde */
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    justify-content: center; /*alineación horizontal en el centro*/
+    border-radius: 10px; /*esquinas redondeadas*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder{
+    width: 100%; /*ancho completo*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    justify-self: center; /*alineación horizontal en el centro*/
+    align-self: center;  /*alineación vertical en el centro*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder .labelForm{
+    color:#333; /*color del texto*/
+    font-size: 20px; /*tamaño del texto*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder .cajaTexto{
+    margin-bottom: 20px; /*margen inferior para separar de los elementos siguientes*/
+    padding: 7px; /*márgenes internos para dar espacio en el borde */
+    font-size: 20px; /*tamaño del texto*/
+    border-radius: 3px; /*esquinas redondeadas*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder .borderCajaTexto{
+    border: 2px solid #aaa; /*borde*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder .error{
+    border: 2px solid red; /*borde*/
+}
+
+#errorMascota, #errorDate, #errorDetails, #errorSelect{
+    margin-bottom: 10px; /*margen inferior para separar de los elementos siguientes*/
+    background-color: rgba(255,0,0,0.2); /*color del fondo*/
+    padding: 7px 5px; /*márgenes internos para dar espacio en el borde */
+    border-radius: 3px; /*esquinas redondeadas*/
+    display: none; /*lo ocultamos hasta que sea necesario*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder .btnSiteForm{
+    display: flex; /*contenedor flexible*/
+    justify-content: flex-end; /*elementos colocados en el extremos derecho*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder .btnForm{
+    cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+    margin: 10px 10px; /*márgenes exteriores.*/
+    padding: 7px; /*márgenes interiores*/
+    font-size: 20px; /*tamaño del texto*/
+    width: 100px; /*ancho del elemento*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder .btnColorBlue{
+    cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+    margin: 10px 0px 10px 10px; /*márgenes exteriores.*/
+    padding: 7px; /*márgenes interiores*/
+    font-size: 20px; /*tamaño del texto*/
+    width: 30%; /*ancho del elemento*/
+    cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+    background-color: #66dae9; /*color del fondo*/
+    border: 2px solid #3ab8c9; /*borde*/
+    border-radius: 5px; /*esquinas redondeadas*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder .btnColorBlue:hover{
+    background-color: white; /*color del fondo*/
+    color: teal; /*color del texto*/
+    border: 2px solid #229faf; /*borde*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder .btnCancelar{
+    cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+    margin: 10px 0px 10px 20px; /*márgenes exteriores.*/
+    padding: 7px; /*márgenes interiores*/
+    font-size: 20px; /*tamaño del texto*/
+    width: 30%; /*ancho del elemento*/
+    background-color: rgba(255, 0, 0,0.4); /*color del fondo*/
+    border: 2px solid rgba(231, 81, 81,0.7); /*borde*/
+    border-radius: 5px; /*esquinas redondeadas*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder .btnCancelar:hover{
+    background-color: white; /*color del fondo*/
+    color: #9b0000; /*color del texto*/
+    border: 2px solid #b41f1f; /*borde*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder .checkContainer{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    align-items: center; /*alineación vertical al centro*/
+    justify-content: flex-start; /*alineación horizontal a la izquierda*/
+    margin-bottom: 10px; /*añadimos margen inferior*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder .checkForm{
+    cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+    margin: 2px 8px 0 8px; /*márgenes exteriores.*/
+    width: 22px; /*ancho del elemento*/
+    height: 22px; /*altura*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder #colorPetAddReminder{
+    display: flex; /*contenedor flexible*/
+    flex-wrap: wrap; /*Los elementos son colocados en varias líneas según el tamaño del elemento que lo contiene*/
+    margin-bottom: 10px; /*margen el la parte inferior para separar*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder #colorPetAddReminder .circlesColor{
+    width: 40px; /*ancho*/
+    height: 40px; /*altura*/
+    border-radius: 50%; /*esquinas redondeadas*/
+    margin: 5px; /*márgenes exteriores.*/
+    cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+    border: 2px solid transparent; /*borde*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder #colorPetAddReminder .circlesColorSelect{
+    width: 40px; /*ancho*/
+    height: 40px; /*altura*/
+    border-radius: 50%; /*esquinas redondeadas*/
+    margin: 5px; /*márgenes exteriores.*/
+    cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+    border: 2px solid transparent; /*borde*/
+}
+
+/********************** FIN MODAL AÑADIR RECORDATORIO **********************/
+
+/********************** MODAL DETALLES MASCOTA *****************************/
+.modalPetDetails{
+    background-color: rgba(85, 177, 177,0.5); /*color del fondo*/
+    padding: 50px; /*márgenes internos*/
+    position: fixed; /*posición fija para que no se mueva*/
+    z-index: 2; /*lo ponemos por encima del resto de elementos*/
+    width: 100%; /*ancho completo*/
+    height: 100%; /*altura completa*/
+    top: 0; /*posición desde la parte superior*/
+    left: 0; /*posición desde la izquierda*/
+    display: none; /*no lo mostramos hasta que sea necesario*/
+    justify-content: center; /*alineación horizontal en el centro*/
+    align-content: center;  /*alineación vertical en el centro*/
+}
+
+.modalPetDetails .contenedorForm{
+    width: 600px; /*ancho*/
+    margin: auto; /*márgenes externos automáticos*/
+    background-color: white; /*color del fondo*/
+    padding: 30px; /*márgenes internos para dar espacio en el borde */
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    justify-content: center; /*alineación horizontal en el centro*/
+    border-radius: 10px; /*esquinas redondeadas*/
+}
+
+/************************** FIN MAIN *************************/
+
+/*************************************************************/
+/******************* ESTILOS MEDIA QUERY *********************/
+/*************************************************************/
+@media screen and (max-width: 768px){
+    .container{
+        width: 100%; /*ancho del elemento*/
+        height: 100%;
+        max-width: 700px; /*ancho máximo para que no se haga demasiado grande*/
+        min-width: 425px; /*ancho mínimo*/
+        padding: 20px 20px 30px 20px; /*márgenes interiores para separar los elementos que contiene del borde*/
+    }
+
+    .container .cabeceraPrincipal{
+        display: flex; /*contenedor flexible*/
+        flex-direction:column-reverse; /*elementos interiores colocados en columna al revés*/
+        justify-content: center; /*colocamos en el centro*/
+        align-items: center; /*alineamos al centro en la vertical*/
+        padding: 20px 20px 10px 20px; /*márgenes interiores*/  
+        margin-top: 70px;/*margen superior para separar del elemento superior*/
+        border-radius: 10px; /*esquinas redondeadas*/
+    }
+
+    /************************** USUARIO **************************/
+
+    .container .cabeceraPrincipal .usuario{
+        display: flex; /*contenedor flexible*/
+        flex-direction: row; /*elementos interiores colocados en línea*/
+        justify-content: flex-start; /*colocamos los elementos en el lado izquierdo*/
+        align-items: center; /*centramos en el eje transversal*/
+    }
+
+    .container .cabeceraPrincipal .usuario .imgUsuario img{
+        border-radius: 50%; /*damos forma circular*/
+        border: 1px solid lightgray; /*borde*/
+        width: 70px; /*ancho*/
+        height: 70px; /*altura*/
+        margin-right: 20px; /*añadimos espacio a la derecha*/
+        object-fit: cover; /*se redimensiona la imagen para mantener su proporción*/
+    }
+
+    .container .cabeceraPrincipal .usuario h1{
+        font-size: 32px; /*tamaño del texto*/
+    }
+
+    .container .cabeceraPrincipal .contenedorFecha{
+        display: flex; /*contenedor flexible*/
+        flex-direction: row; /*elementos interiores colocados en línea*/
+        justify-content: center; /*colocamos en el centro (eje horizontal)*/
+        align-items: center; /*colocamos en el centro (eje transversal)*/
+        padding: 5px 10px 15px 10px; /**márgenes interiores*/
+        font-size: 18px; /*tamaño del texto*/
+    }
+
+    .container .cabeceraPrincipal .contenedorFecha #diaSemana,
+    .container .cabeceraPrincipal .contenedorFecha #fecha{
+        padding-left: 5px; /*añadimos espacio a la izquierda para separar*/
+        font-size: 20px; /*tamaño del texto*/
+    }
+
+    .container .cuerpoPrincipal{
+        display: flex; /*contenedor flexible*/
+        flex-direction: column; /*elementos interiores colocados en columna*/
+        justify-content: center; /*elementos centrados en el eje horizontal*/
+        padding: 0; /*eliminamos márgenes interiores*/
+    }
+
+    .container .cuerpoPrincipal .botonesResponsive{
+        display: flex; /*contenedor flexible*/
+        flex-direction: row; /*elementos interiores colocados en línea*/
+        justify-content: space-between; /*dejamos espacio entre los elementos*/
+        align-items: center; /*colocamos en el centro (eje transversal)*/
+    }
+
+    /************************** MASCOTAS **************************/
+
+    .container .cuerpoPrincipal .contenedorMascotas{
+        margin-right: 0; /*añadimos espacio a la derecha*/
+        border-top-right-radius: 0; /*eliminamos esquina superior derecha redondeada*/
+        border-top-left-radius: 0; /*eliminamos esquina superior izquierda redondeada*/
+        border-bottom-left-radius: 10px; /*esquinas redondeadas*/
+        border-bottom-right-radius: 10px; /*esquinas redondeadas*/
+        padding: 5%; /*márgenes interiores*/
+        border: 1px solid #bcecf1; /*borde*/
+        border-top: transparent; /*ocultamos el borde superior para que parezca que tiene pestañas*/
+    }
+
+    .container .cuerpoPrincipal .tituloYadd h2{
+        padding-top: 5px; /*añadimos algo de espacio en la parte superior*/
+        font-size: 27px; /*tamaño del texto*/
+    }
+
+    .container .cuerpoPrincipal .contenedorMascotas .tarjetaMascota{
+        padding: 10px; /*márgenes internos*/
+    }
+
+    .container .cuerpoPrincipal .contenedorMascotas .tarjetaMascota .datosMascota .nombreMascota{
+        margin-left: 10px; /*añadimos espacio a la izquierda*/
+        font-size: 22px; /*tamaño del texto*/
+    }
+
+    /*********************** RECORDATORIOS *************************/
+
+    .container .cuerpoPrincipal .contenedorRecordatorios{
+        display: none; /*ocultamos hasta que se pulse la pestaña correspondiente*/
+    }
+
+    .container .cuerpoPrincipal .contenedorRecordatorios{
+        margin-left: 0; /*eliminamos el margen de la izquierda*/
+        border-top-right-radius: 0; /*eliminamos esquina superior derecha redondeada*/
+        border-top-left-radius: 0; /*eliminamos esquina superior izquierda redondeada*/
+        border-bottom-left-radius: 10px; /*esquinas redondeadas*/
+        border-bottom-right-radius: 10px; /*esquinas redondeadas*/
+        padding: 5%; /*márgenes interiores*/
+        border: 1px solid #bcecf1; /*borde*/
+        border-top: transparent; /*ocultamos el borde superior para que parezca que tiene pestañas*/
+    }
+
+    /*********************** MODALES *************************/
+    .modalAddReminder{
+        padding: 0;/*margenes internos*/
+    }
+    .modalAddReminder .contenedorForm{
+        width: 100%; /*ancho completo*/
+        max-width: 550px; /*ancho máximo para que no se haga demasiado grande*/
+        min-width: 425px; /*ancho mínimo*/
+        margin: auto; /*márgenes exteriores. auto para que se centre en la página*/
+        padding: 20px; /*márgenes interiores*/
+        border-radius: 8px; /*esquinas redondeadas*/
+    }
+
+    .modalAddReminder .contenedorForm .formularioAddReminder .labelForm{
+        font-size: 18px; /*tamaño del texto*/
+    }
+    
+    .modalAddReminder .contenedorForm .formularioAddReminder .cajaTexto{
+        font-size: 18px; /*tamaño del texto*/
+    }
+
+    .modalAddReminder .contenedorForm .formularioAddReminder .checkContainer p{
+        font-size: 18px; /*tamaño del texto*/
+    }
+
+    .modalAddReminder .contenedorForm .formularioAddReminder .btnColorBlue{
+        font-size: 18px; /*tamaño del texto*/
+}
+
+    .modalAddReminder .contenedorForm .formularioAddReminder .btnCancelar{
+        font-size: 18px; /*tamaño del texto*/
+    }
+
+}
+
+

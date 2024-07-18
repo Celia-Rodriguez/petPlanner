@@ -1,0 +1,597 @@
+/*************************************************************/
+/********************* ESTILOS GENERALES *********************/
+/*************************************************************/
+    main{
+        max-width: 1500px;/*ancho máximo*/
+        margin: 0 auto;/*margen exterior. auto a los lados para centrar el elemento en pantalla*/
+        padding-top: 90px;/*márgenes interiores para dar espacio alrededor*/
+        display: flex;/*contenedor flexible*/
+        box-shadow: 0 0 5px #1eadc0; /*sombra para dar sensación de elevación*/
+    }
+    h2{
+        margin: 0px 50px;/*margen exterior*/
+        padding: 0px;/*mágenes internos*/
+    }
+    .iconoInfo{
+        margin-left: 5px; /*añadimos margen a la izquierda*/
+        width: 20px; /*ancho del elemento*/
+        height: 20px; /*altura del elemento*/
+        background-color: #43C2D3; /*color de fondo*/
+        border-radius: 30px; /*esquinas redondeadas*/
+        color: white; /*color del texto*/
+        font-weight: bold; /*texto en negrita para que se vea mejor*/
+        text-align: center; /*alineamos el texto al centro*/
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*tipografía con serifa*/
+        font-size: 18px; /*tamaño del texto*/
+        cursor: help; /*cuando colocamos encima el cursor aparece una interrogación*/
+        z-index: 100;/*orden de colocación*/
+    }
+/*************************************************************/
+/********************* SIDE BAR *********************/
+/*************************************************************/
+    .sidebar{
+        padding: 30px 30px; /*mágenes internos*/
+        display: flex;/*contenedor flexible*/
+        flex-direction: column;/*elementos interiores colocados en columna*/
+        align-items: center;/*elementos centrados sobre el eje transversal*/
+        background-color: rgba(166, 227, 235, 0.85);/*color del fondo*/
+        width: 300px;/*ancho*/
+        border-right: 1px solid #009999;/*bordes del contenedor*/
+    }
+
+    .sidebar .blueButton{
+        margin-top: 30px;/*margen exterior superior*/
+        cursor: pointer;/*cursor en forma de manita*/
+        font-size: 18pt;/*tamaño letras*/
+        font-family: Arial, Helvetica, sans-serif;/*fuente*/
+        border-radius: 10px;/*bordes redondeados*/
+        text-align: center;/*texto centrado*/
+        width: 120px;/*ancho*/
+        padding: 5px;/*mágenes internos*/
+        color: #009999;/*color letras*/
+        border: 2px solid #009999;/*bordes del contenedor*/
+        background-image: linear-gradient(to top, #baeaf0, white);/*degradado del fondo*/
+        box-shadow: 0 0 5px white;/*sombra del contenedor*/
+    }
+    .sidebar .blueButton:hover{
+        box-shadow: 0 0 5px #16c7c7;/*sombra del contenedor*/
+        background-image: linear-gradient(to top, white, white);/*degradado del fondo*/
+    }
+    .sidebar .choosePet{
+        font-family: "Geranium";/*fuente*/
+        font-size: 14px;/*tamaño letras*/
+        margin-top: 100px;/*margen exterior superior*/
+    }
+    .sidebar .choosePet .checkForm{
+        cursor: pointer;/*cursor en forma de manita*/
+        margin: 0 8px;/*margen exterior*/
+        width: 20px;/*ancho*/
+        height: 20px;/*alto*/
+    }
+    .sidebar .choosePet .checkNamePet{ 
+        font-size: 18px;/*tamaño letras*/
+        cursor: pointer;/*cursor en forma de manita*/
+        margin: 15px 0px;/*margen exterior*/
+        padding: 10px;/*mágenes internos*/
+        background-image: linear-gradient(to right,rgb(154, 234, 244), rgba(106, 194, 235, 0.5)), url("../img/paws_white.png");/*degradado e imagen del fondo*/
+        border: 1px solid teal;/*bordes del contenedor*/
+        border-radius: 10px;/*border redondeados*/
+        background-size: cover;/*tamañano imagen fondo*/
+    }
+    .btnSideBar{
+        display: none;/*contenedor oculto*/
+    }
+    .btnSideBar:hover{
+        box-shadow: 0 0 5px #16c7c7;/*sombra del contenedor*/
+        background-image: linear-gradient(to top, white, white);/*degradado del fondo*/
+    }
+/*************************************************************/
+/********************* MODAL ADD REMINDER *********************/
+/*************************************************************/
+    .modalAddReminder{
+        background-color: rgba(85, 177, 177,0.5);/*color fondo*/
+        padding: 50px;/*mágenes internos*/
+        position: absolute;/*posicion*/
+        z-index: 2;/*orden de posicionado*/
+        width: 100%;/*ancho*/
+        height: 102%;/*alto*/
+        top: 0;/*anclado superior*/
+        left: 0;/*anclado izquierdo*/
+        display: none;/*contenedor no colocado*/
+        justify-content: center;/*elementos interiores centradoss*/
+        align-content: center;/*elementos centrados sobre el eje transversal */
+    }
+    .modalAddReminder .contenedorForm{
+        width: 600px;/*ancho*/
+        margin: auto;/*mágenes externos*/
+        background-color: white;/*color fondo*/
+        padding: 30px;/*mágenes internos*/
+        display: flex;/*contenedor flexible*/
+        flex-direction: column;/*elementos interiores colocados en columna*/
+        justify-content: center;/*elementos interiores ccentrados*/
+        border-radius: 10px;/*bordes redondeados*/
+    }
+    .modalAddReminder .contenedorForm .formularioAddReminder{
+        width: 500px;/*ancho*/
+        display: flex;/*contenedor flexible*/
+        flex-direction: column;/*elementos interiores colocados en columna*/
+        justify-content: center;/*elementos interiores ccentrados*/
+        align-self: center;/*elementos centrados sobre el eje transversal*/
+    }
+    .modalAddReminder .contenedorForm .formularioAddReminder .labelForm{
+        color:#333;/*color fuente*/
+        margin-bottom: 5px;/*margen externo inferior*/
+    }
+    .modalAddReminder .contenedorForm .formularioAddReminder .cajaTexto{
+        margin-bottom: 20px;/*margen exterior inferior*/
+        padding: 7px;/*margen interno*/
+        font-size: 20px;/*tamaño letra*/
+        border-radius: 3px;/*bordes redondeados*/
+    }
+    .modalAddReminder .contenedorForm .formularioAddReminder .borderCajaTexto{
+        border: 2px solid #aaa;/*bordes del contenedor*/
+    }
+    .modalAddReminder .contenedorForm .formularioAddReminder .error{
+        border: 2px solid red;/*bordes del contenedor*/
+    }
+    #errorMascota, #errorDate, #errorDetails, #errorSelect{
+        margin-bottom: 10px;/*margen externo inferior*/
+        background-color: rgba(255,0,0,0.2);/*color fondo*/
+        padding: 7px 5px;/*margenes internos*/
+        border-radius: 3px;/*bordes redondeados*/
+        display: none;/*contenedor oculto*/
+    }
+    .modalAddReminder .contenedorForm .formularioAddReminder .btnSiteForm{
+        display: flex;/*contenedor flexible*/
+        justify-content: flex-end;/*elementos interiores colocados al final*/
+    }
+    .modalAddReminder .contenedorForm .formularioAddReminder .btnForm{
+        cursor: pointer;/*cursor en forma de manita*/
+        margin: 10px 10px;/*margenes externos*/
+        padding: 7px;/*margenes internos*/
+        font-size: 20px;/*tamaño letras*/
+        width: 100px;/*ancho*/
+    }
+    .modalAddReminder .contenedorForm .formularioAddReminder .btnColorBlue{
+        cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+        margin: 10px 0px 10px 10px; /*márgenes exteriores.*/
+        padding: 7px; /*márgenes interiores*/
+        font-size: 20px; /*tamaño del texto*/
+        width: 30%; /*ancho del elemento*/
+        cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+        background-color: #66dae9; /*color del fondo*/
+        border: 2px solid #3ab8c9; /*borde*/
+        border-radius: 5px; /*esquinas redondeadas*/
+    }
+    .modalAddReminder .contenedorForm .formularioAddReminder .btnColorBlue:hover{
+        background-color: white; /*color del fondo*/
+        color: teal; /*color del texto*/
+        border: 2px solid #229faf; /*borde*/
+    }
+    .modalAddReminder .contenedorForm .formularioAddReminder .btnCancelar{
+        cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+        margin: 10px 0px 10px 20px; /*márgenes exteriores.*/
+        padding: 7px; /*márgenes interiores*/
+        font-size: 20px; /*tamaño del texto*/
+        width: 30%; /*ancho del elemento*/
+        background-color: rgba(255, 0, 0,0.4); /*color del fondo*/
+        border: 2px solid rgba(231, 81, 81,0.7); /*borde*/
+        border-radius: 5px; /*esquinas redondeadas*/
+    }
+    .modalAddReminder .contenedorForm .formularioAddReminder .btnCancelar:hover{
+        background-color: white; /*color del fondo*/
+        color: #9b0000; /*color del texto*/
+        border: 2px solid #b41f1f; /*borde*/
+    }
+    .modalAddReminder .contenedorForm .formularioAddReminder #colorPetAddReminder{
+        display: flex;/*contenedor flexible*/
+        flex-wrap: wrap;/*elementos cambian de línea*/
+        margin-bottom: 10px;/*margen externo inferior*/
+    }
+    .modalAddReminder .contenedorForm .formularioAddReminder #colorPetAddReminder .circlesColor{
+        width: 40px;/*ancho*/
+        height: 40px;/*alto*/
+        border-radius: 50%;/*bordes redondeados*/
+        margin: 5px;/*margen exterior*/
+        cursor: pointer;/*cursor en forma de manita*/
+        border: 2px solid transparent;/*bordes del contenedor*/
+    }
+    .modalAddReminder .contenedorForm .formularioAddReminder .checkContainer{
+        display: flex; /*contenedor flexible*/
+        flex-direction: row; /*elementos interiores colocados en línea*/
+        align-items: center; /*alineación vertical al centro*/
+        justify-content: flex-start; /*alineación horizontal a la izquierda*/
+        margin-bottom: 10px; /*añadimos margen inferior*/
+    }   
+    .modalAddReminder .contenedorForm .formularioAddReminder .checkForm{
+        cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+        margin: 2px 8px 0 8px; /*márgenes exteriores.*/
+        width: 22px; /*ancho del elemento*/
+        height: 22px; /*altura*/
+    }
+/*************************************************************/
+/********************* MODAL EDIT REMINDER *********************/
+/*************************************************************/
+    .modalEditReminder{
+        background-color: rgba(85, 177, 177,0.5);/*color fondo*/
+        padding: 50px;/*margenes internos*/
+        position: absolute;/*posicion*/
+        z-index: 2;/*orden de posicionado*/
+        width: 100%;/*ancho*/
+        height: 102%;/*alto*/
+        top: 0;/*anclado superior*/
+        left: 0;/*anclado izquierdo*/
+        display: none;/*contenedor oculto*/
+        justify-content: center;/*elementos interiores centrados*/
+        align-content: center;/*elementos centrados sobre el eje transversal */
+    }
+    .modalEditReminder .contenedorForm{
+        width: 600px;/*ancho*/
+        margin: auto;/*margen exterior*/
+        background-color: white;/*color fondo*/
+        padding: 30px;/*margenes internos*/
+        display: flex;/*contenedor flexible*/
+        flex-direction: column;/*elementos interiores colocados en columna*/
+        justify-content: center;/*elementos interiores centrados*/
+        border-radius: 10px;/*bordes redondeados*/
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder{
+        width: 500px;/*ancho*/
+        display: flex;/*contenedor flexible*/
+        flex-direction: column;/*elementos interiores colocados en columna*/
+        justify-self: center;/*elementos interiores centrados*/
+        align-self: center;/*elementos centrados sobre el eje transversal */
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder #dataReminder{
+        display: flex;/*contenedor flexible*/
+        flex-direction: column;/*elementos interiores colocados en columna*/
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder .labelForm{
+        color:#333;/*color letras*/
+        margin-bottom: 5px;/*margen externo inferior*/
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder .cajaTexto{
+        margin-bottom: 20px;/*margen exterior inferior*/
+        padding: 7px;/*margenes internos*/
+        font-size: 20px;/*tamaño letra*/
+        border-radius: 3px;/*bordes redondeados*/
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder .borderCajaTexto{
+        border: 2px solid #aaa;/*bordes del contenedor*/
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder .error{
+        border: 2px solid red;/*bordes del contenedor*/
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder .btnSiteForm-3btn{
+        display: flex;/*contenedor flexible*/
+        justify-content: space-between;/*elementos interiores con espacio entre ellos*/
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder .btnSiteForm{
+        display: flex;/*contenedor flexible*/
+        justify-content: space-between;/*elementos interiores con espacio entre ellos*/
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder .btnForm{
+        cursor: pointer;/*cursor en forma de manita*/
+        margin: 10px 0px;/*margen exterior*/
+        padding: 7px;/*margenes internos*/
+        font-size: 20px;/*tamaño letra*/
+        width: 100px;/*ancho*/
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder .btnColorBlue{
+        cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+        margin: 10px 0px 10px 10px; /*márgenes exteriores.*/
+        padding: 7px; /*márgenes interiores*/
+        font-size: 20px; /*tamaño del texto*/
+        width: 100px; /*ancho del elemento*/
+        cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+        background-color: #66dae9; /*color del fondo*/
+        border: 2px solid #3ab8c9; /*borde*/
+        border-radius: 5px; /*esquinas redondeadas*/
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder .btnColorBlue:hover{
+        background-color: white; /*color del fondo*/
+        color: teal; /*color del texto*/
+        border: 2px solid #229faf; /*borde*/
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder .btnCancelar{
+        cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+        margin: 10px 0px 10px 20px; /*márgenes exteriores.*/
+        padding: 7px; /*márgenes interiores*/
+        font-size: 20px; /*tamaño del texto*/
+        width: 100px; /*ancho del elemento*/
+        background-color: rgba(255, 0, 0,0.4); /*color del fondo*/
+        border: 2px solid rgba(231, 81, 81,0.7); /*borde*/
+        border-radius: 5px; /*esquinas redondeadas*/
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder  .btnCancelar:hover{
+        background-color: white; /*color del fondo*/
+        color: #9b0000; /*color del texto*/
+        border: 2px solid #b41f1f; /*borde*/
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder .btnRed{
+        background-color:  rgb(178, 0, 0);/*color del fondo*/
+        color: white;/*color letras*/
+        border-radius: 5px;/*bordes redondeados*/
+        border: 1px solid rgb(43, 6, 6);/*bordes del contenedor*/
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder .btnRed:hover{
+        background-color: white;/*color fondo*/
+        color: rgb(178, 0, 0);
+        border: 1px solid rgb(43, 6, 6);/*bordes del contenedor*/
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder #colorPetEditReminder{
+        display: flex;/*contenedor flexible*/
+        flex-wrap: wrap;/*elementos cambian de línea*/
+        margin-bottom: 10px;/*margen exterior inferior*/
+
+    }
+    .modalEditReminder .contenedorForm .formularioEditReminder #colorPetEditReminder .circlesColor{
+        width: 40px;/*ancho*/
+        height: 40px;/*alto*/
+        border-radius: 50%;/*bordes redondeados*/
+        margin: 5px;/*margenes externos*/
+        cursor: pointer;/*cursor en forma de manita*/
+        border: 2px solid transparent;/*bordes del contenedor*/
+    }
+/*************************************************************/
+/********************* CALENDARIO *********************/
+/*************************************************************/
+.calendar{
+    width: 100%;/*ancho*/
+    font-family: "Geranium";/*fuente*/
+    font-size: 20px;/*tamaño letra*/
+    background-color: white;/*color fondo*/
+}
+.calendar .mes{
+    height: 70px;/*alto*/
+    display: flex;/*contenedor flexible*/
+    justify-content: center;/*elementos interiores centrados*/
+    align-content: center;/*elementos centrados sobre el eje transversal */
+    padding: 10px;/*margenes internos*/
+    border: 1px solid #009999;/*bordes del contenedor*/
+}
+.calendar .mes h2{
+    margin: 0px 5px;/*margenes externos*/
+    padding: 10px;/*margenes internos*/
+}
+.calendar .mes .cambioMes{
+    cursor: pointer;/*cursor en forma de manita*/
+    margin: 0 15px;/*margenes externos*/
+    padding: 10px;/*margenes internos*/
+    border-radius: 5px;/*bordes redondeados*/
+    text-decoration: none;/*decoración del texto*/
+    color: #009999;/*color letras*/
+    border: 2px solid #009999;/*bordes del contenedor*/
+    background-image: linear-gradient(to top, #baeaf0, white);/*dregradado del fondo*/
+    box-shadow: 0 0 5px white;/*sombra del contenedor*/
+}
+.calendar .mes .cambioMes:hover{
+    box-shadow: 0 0 5px #16c7c7;/*sombra del contenedor*/
+    background-image: linear-gradient(to top, white, white);/*dregradado del fondo*/
+}
+.calendar .diaSemana{
+    display: grid;/*contenedor cuadrícula*/
+    grid-template-columns: repeat(7, 1fr);/*numero y tamaño de columnas*/
+    background-color:  #b2e4eb;/*color fondo*/
+    place-content: center;/*contenido centrado*/
+    text-align: center;/*texto centrado*/
+    font-size: 18px;/*tamaño letras*/
+    border-top: 1px solid #009999;/*bordes del contenedor*/
+    border-bottom: 1px solid #009999;/*bordes del contenedor*/
+}
+.calendar .diaSemana .diaSemanaItem{
+    font-weight: 300;/*grosor letra*/
+    padding: 10px 20px;/*margenes internos*/
+    border-right: 1px solid #009999;/*bordes del contenedor*/
+    border-left: 1px solid #009999;/*bordes del contenedor*/
+}
+.calendar .cuerpoCalendario{
+    display: grid;/*contenedor cuadrícula*/
+    grid-template-columns: repeat(7, 1fr);/*numero y tamaño de columnas*/
+    grid-template-rows: repeat(5, 1fr) auto;/*numero y tamaño de filas*/
+    height: calc(100vh - 325px);/*alto*/
+}
+.calendar .cuerpoCalendario .diaFecha{
+    border: 1px solid #009999;/*bordes del contenedor*/
+    padding: 10px;/*margenes internos*/
+    height: 100%;/*alto*/
+}
+.calendar .cuerpoCalendario .today{
+    background-color: #3db7c7;/*color fondo*/
+    color: aliceblue;/*color letras*/
+}
+.calendar .cuerpoCalendario .pastdays{
+    background-color: #d7f2f4;/*color fondo*/
+    color: rgb(183, 183, 183);/*color letras*/
+}
+.calendar .cuerpoCalendario .reminder{
+    cursor: pointer;/*cursor en forma de manita*/
+    font-size: 10pt;/*tamaño letra*/
+    padding: 5px;/*margenes internos*/
+    border-radius: 5px;/*bordes redondeados*/
+    width: fit-content;/*ancho*/
+    color: rgb(3, 0, 4); /*color letras*/
+    margin-top: 5px;/*margen exterior superior*/
+    font-weight: 550;/*grosor letras*/
+    display: flex;/*contenedor flexible*/
+    flex-direction: row;/*elementos colocados en línea*/
+}
+.calendar .cuerpoCalendario .reminder:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Efecto de sombra */
+}
+.calendar .cuerpoCalendario .reminder .textReminder{
+    font-family: Arial, Helvetica, sans-serif;/*fuente*/
+    margin: 0;/*margenes externos*/
+    padding: 0;/*margenes internos*/
+    width: 100px;/*ancho*/
+    white-space: nowrap; /* Evitar saltos de línea */
+    overflow: hidden; /* Ocultar el texto que excede */
+    text-overflow: ellipsis; /* Agregar puntos suspensivos (...) al final del texto oculto */
+}
+
+/*************************************************************/
+/******************* ESTILOS MEDIA QUERY  *********************/
+/*************************************************************/
+
+@media screen and (max-width: 768px) {
+/********************* ESTILOS GENERALES *********************/
+main{
+    max-width: 450px;
+    padding-top: 70px;/*márgenes interiores para dar espacio alrededor*/
+    display: block;/*contenedor en bloque*/
+}
+.btnSideBar{
+    display: block;/*contenedor en bloque*/
+    height: 25px;/*alto*/
+    width: 100%;/*ancho*/
+    padding: auto;/*mágenes internos*/
+    color: #009999;/*color letras*/
+    border: 1px solid #009999;/*bordes del contenedor*/
+    background-image: linear-gradient(to top, #baeaf0, white);/*degradado del fondo*/
+    box-shadow: 0 0 5px white;/*sombra del contenedor*/
+}
+/******************* SIDE BAR  *********************/    
+    .sidebar{
+        padding: 20px; /*mágenes internos*/
+        display: none;/*contenedor oculto*/
+        width: 100%;/*ancho*/
+    }
+    .sidebar--visible{
+        display: flex;/*contenedor flexible*/
+    }
+    .sidebar .blueButton{
+        margin-top: 20px;/*margen exterior superior*/
+        font-size: 18px;/*tamaño letras*/
+        width: 120px;/*ancho*/
+    }
+    .sidebar .choosePet{
+        margin-top: 30px;/*margen exterior superior*/
+    }
+    .sidebar .choosePet h2{
+        margin: 5px 0px;/*margen exterior*/
+    }
+    .sidebar .choosePet .checkForm{
+        margin: 0 8px;/*margen exterior*/
+        width: 15px;/*ancho*/
+        height: 15px;/*alto*/
+    }
+    .sidebar .choosePet .checkNamePet{ 
+        margin: 15px 0px;/*margen exterior*/
+        padding: 10px 20px;/*mágenes internos*/
+    }
+/******************* FIN SIDE BAR  *********************/
+
+/******************* CALENDARIO  *********************/   
+    .calendar{
+        font-size: 16px;/*tamaño letra*/
+    }
+    .calendar .mes{
+        height: 60px;/*alto*/
+    }
+    .calendar .mes h2{
+        margin: 0px 5px;/*margenes externos*/
+        padding: 5px;/*margenes internos*/
+    }
+    .calendar .mes .cambioMes{
+        margin: 0 5px;/*margenes externos*/
+        padding: 5px;/*margenes internos*/
+    }
+    .calendar .diaSemana{
+        grid-template-columns: repeat(7, 1fr);
+        font-size: 12px;/*tamaño letra*/
+    }
+    .calendar .diaSemana .diaSemanaItem {
+        padding: 5px 10px;/*margenes internos*/
+    }
+    .calendar .cuerpoCalendario{
+        grid-template-columns: repeat(7, 1fr);/*numero y tamaño de columnas*/
+        grid-template-rows: repeat(5, 1fr) auto;/*numero y tamaño de filas*/
+    }
+    .calendar .cuerpoCalendario .diaFecha{
+        padding: 0px 0px 10px 0px;/*margenes internos*/
+    }
+    .calendar .cuerpoCalendario .diaFecha>div{
+        margin: 10px 0px 0px 5px;/*margenes internos*/
+    }
+    .calendar .cuerpoCalendario .reminder{
+        font-size: 9px;/*tamaño letras*/
+        width: 40px;/*ancho*/
+        font-weight: 350;/*grosor letras*/
+    }
+/******************* FIN CALENDARIO *********************/   
+
+/******************* MODAL ADD REMINDER *********************/   
+.modalAddReminder{
+    padding: 0;/*margenes internos*/
+}
+.modalAddReminder .contenedorForm{
+    width: 100%; /*ancho completo*/
+    max-width: 550px; /*ancho máximo para que no se haga demasiado grande*/
+    min-width: 425px; /*ancho mínimo*/
+    margin: auto; /*márgenes exteriores. auto para que se centre en la página*/
+    padding: 20px; /*márgenes interiores*/
+}
+.modalAddReminder .contenedorForm .formularioAddReminder{
+    width: 350px;/*ancho*/
+}
+.modalAddReminder .contenedorForm .formularioAddReminder .labelForm{
+    font-size: 18px; /*tamaño del texto*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder .cajaTexto{
+    font-size: 18px; /*tamaño del texto*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder .checkContainer p{
+    font-size: 18px; /*tamaño del texto*/
+}
+
+.modalAddReminder .contenedorForm .formularioAddReminder .btnForm{
+    font-size: 18px;/*tamaño letras*/
+}
+.modalAddReminder .contenedorForm .formularioAddReminder p{
+    font-size: 18px;/*tamaño letras*/
+}
+.modalAddReminder .contenedorForm .formularioAddReminder #colorPetAddReminder{
+    display: flex;/*contenedor flexible*/
+    flex-wrap: wrap;/*elementos cambian de línea*/
+    margin-bottom: 10px;/*margen externo inferior*/
+
+}
+.modalAddReminder .contenedorForm .formularioAddReminder #colorPetAddReminder .circlesColor{
+    width: 30px;/*ancho*/
+    height: 30px;/*alto*/
+}
+/******************* FIN MODAL ADD REMINDER *********************/   
+
+/******************* MODAL EDIT REMINDER *********************/  
+.modalEditReminder{
+    padding: 0;/*margenes internos*/
+}
+.modalEditReminder .contenedorForm{
+    width: 100%; /*ancho completo*/
+    max-width: 550px; /*ancho máximo para que no se haga demasiado grande*/
+    min-width: 425px; /*ancho mínimo*/
+    margin: auto; /*márgenes exteriores. auto para que se centre en la página*/
+    padding: 20px; /*márgenes interiores*/
+}
+.modalEditReminder .contenedorForm .formularioEditReminder{
+    width: 350px;/*ancho*/
+}
+.modalEditReminder .contenedorForm .formularioEditReminder .labelForm{
+    font-size: 18px;/*tamaño letra*/
+}
+.modalEditReminder .contenedorForm .formularioEditReminder .cajaTexto{
+    font-size: 18px;/*tamaño letra*/
+}
+.modalEditReminder .contenedorForm .formularioEditReminder .btnForm{
+    font-size: 18px;/*tamaño letra*/
+}
+
+.modalEditReminder .contenedorForm .formularioEditReminder #colorPetEditReminder .circlesColor{
+    width: 30px;/*ancho*/
+    height: 30px;/*alto*/
+}
+/******************* FIN MODAL EDIT REMINDER *********************/  
+    
+}

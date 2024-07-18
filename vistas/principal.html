@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
+    <!-- estilos -->
+    <link rel="stylesheet" href="../css/style_global.css">
+    <link rel="stylesheet" href="../css/style_pagPrincipal.css">
+    <!-- jquery -->
+    <script src="../js/lib/jquery-3.7.1.js"></script>
+    <script src="../src/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script> 
+      <!--<script src="../src/lib/moment/moment.min.js"></script>-->
+    <!-- javascript -->
+    <script src="../js/principal.js" defer></script>
+    <script src="../js/validaciones.js" defer></script>
+    <script src="../js/script_global.js" defer></script>
+    <!-- JavaScript de Sweetalert -->
+    <script src="../src/lib/sweetalert/sweetalert2@11.js"></script>
+    <!-- ics -->
+    <script src="../js/lib/ics.deps.min.js"></script>
+</head>
+<body>
+    <!--------------- cabecera ----------------->
+    <header class="cabecera">
+        <a href="principal.html" class="contenedorLogo"> 
+            <img src="../img/Logo_texto.png" alt="" class="imgLogo"> 
+        </a>
+        <nav class="mainMenu">
+            <button id="btnMenu" class="btnMainMenu">
+                &#8801;
+            </button>
+            <ul class="navLinks">
+                <li class="navItem"><a href="principal.html">Inicio</a></li> 
+                <li class="navItem"><a href="vistaMascotas.html">Mascotas</a> </li> 
+                <li class="navItem"><a href="calendar.html">Calendario</a> </li> 
+                <li class="navItem"><a href="#" class="menuUser">Usuario</a> 
+                    <ul class="userMenuItems"><!-- MENU USUARIO  -->
+                        <li class="userItem"><a href="usuario.html">Configuración</a></li>
+                        <li class="userItem" id="adminUsuarios"><a href="admin_usuarios.html">Administración</a></li>
+                        <li class="userItem"><a href="../php/sessionDestroy.php">Cerrar Sesión</a></li>
+                    </ul>
+                </li> <!-- Esta clase está vacía es solo para llamar al menú -->
+            </ul>
+        </nav>
+    </header>
+    <!---------------- cuerpo ----------------->
+    <main class="principal">
+        <div class="container">
+            <div class="cabeceraPrincipal">
+                <div class="usuario">
+                    <div class="imgUsuario"></div>
+                    <h1 class="nombre">¡Hola <span id="nUsuario"></span>!</h1>
+                </div>
+                <div class="contenedorFecha">
+                    <p id="diaSemana"></p>
+                    <p id="fecha"></p>
+                </div>
+            </div>
+            <div class="cuerpoPrincipal">
+                <div class="botonesResponsive">
+                    <button class="btnOpcionesResponsive selected" id="btnVerMascotas" onclick="verSeccion('mascotas')">Mascotas</button>
+                    <button class="btnOpcionesResponsive" id="btnVerRecordatorios" onclick="verSeccion('recordatorios')">Recordatorios</button>
+                </div>
+                <div class="contenedorMascotas">
+                    <div class="tituloYadd">
+                        <h2>Mis mascotas</h2>
+                        <button id="btnAddMascota">+</button>    
+                    </div>
+                    
+                    <div id="pets">
+                        <!-- Mascotas  -->
+                    </div>
+                    
+                </div>
+                <div class="contenedorRecordatorios">
+                    <div class="tituloYadd">
+                        <h2>Próximos recordatorios</h2>
+                        <button id="btnAddReminder">+</button>    
+                    </div>
+                     <div id="showreminders">
+                       <!-- Recordatorios -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!---------------- footer ----------------->
+    <footer class="pie">
+        <div class="pieContenedor">
+            <div class="pieLogos">
+                <a href="index.html"> 
+                    <img src="../img/Logo_texto.png" alt="" class="pielogo">
+                </a>
+                <div class="rrss">
+                    <a onclick="proximamente()"><img src="../img/logos/facebook_icon.png" alt="Icono facebook"></a>
+                    <a onclick="proximamente()"><img src="../img/logos/x_icon.png" alt="Icono X"></a>
+                    <a onclick="proximamente()"><img src="../img/logos/instagram_icon.png" alt="Icono instagram"></a>
+                    <a onclick="proximamente()"><img src="../img/logos/youtube_icon.png" alt="Icono Youtube"></a>
+                </div>
+            </div>
+            <div class="pieLogosDos">
+                <div class="pieLinks">
+                    <a onclick="proximamente()">FAQS</a>
+                    <a onclick="proximamente()">Sobre PetPlanner</a>        
+                    <a onclick="proximamente()">Soporte</a>
+                    <a onclick="proximamente()">Contacto</a>
+                </div>
+                <div class="pieLinks"> 
+                     <p>created by <a href="https://github.com/PatriciaCBweb" target="_blank">Patricia</a> & <a href="https://github.com/Celia-Rodriguez" target="_blank">Celia</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!---------------  MODAL AÑADIR RECORDATORIO ----------------->    
+    <div class="modalAddReminder">
+        <div class="contenedorForm">
+            <form method="POST" id="formAddReminder" class="formularioAddReminder">
+                <label for="petAddReminder" class="labelForm">Mascota </label><span class="error" id="errorMascota"></span>
+                <select id="petAddReminder" name="pet_add_reminder" class="cajaTexto borderCajaTexto">
+                    <option value="">Seleccione una mascota</option>
+                </select>
+                <label for="dateAddReminder" class="labelForm">Elija una Fecha</label><span id="errorDate"></span>
+                <input type="date" id="dateAddReminder" class="cajaTexto borderCajaTexto" name="date_add_reminder">
+                <label for="detailsAddReminder" class="labelForm">Detalles</label><span class="error" id="errorDetails"></span>
+                <input type="text" id="detailsAddReminder" class="cajaTexto borderCajaTexto" name="details_add_reminder" placeholder="Escriba aquí ... ">
+                <label for="typeAddReminder">Selecciona el tipo de recordatorio:</label>
+                <select id="typeAddReminder" name="type_add_reminder" class="cajaTexto borderCajaTexto">
+                    <option value="">Seleccione una opción</option>
+                </select>
+                <span id="errorSelect"></span>
+                <label for="nameTypeAddReminder">Selecciona el nombre recordatorio:</label>
+                <select id="nameTypeAddReminder" name="name_type_add_reminder" class="cajaTexto borderCajaTexto">
+                    <option value="">Seleccione una opción</option>
+                </select>
+                <span id="errorSelect"></span>
+                <label for="colorPetAddReminder" class="labelForm">Elige un color </label><span class="error" id="errorMascota"></span>
+                <div id="colorPetAddReminder"> 
+                    <!-- colores -->
+                </div>
+                <input type="hidden" name="color_pet_reminder" id="selectedColor" value="">
+                <div class="checkContainer">
+                    <input type="checkbox" name="check_reminder" class="checkForm" id="checkReminder"><p>Quiero que el recordatorio se descargue en mi ordenador.<div class="iconoInfo" title="Es un archivo .ics que se puede importar en Outlook Calendar (solo compatible con este calendario)">?</div></p>
+                </div>
+                <div class="btnSiteForm">
+                    <input type="submit" class="btnForm btnColorBlue" value="Añadir">
+                    <input type="button" class="btnForm btnCancelar" id="closeAddReminder" value="Cancelar">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!---------------  MODAL AÑADIR RECORDATORIO ----------------->    
+    <div class="modalPetDetails">
+        <div class="contenedorForm">
+            <h4>Paco</h4>
+            <p class="labelDetails">Nombre: </p>
+            <p class="petDetails">Paco</p>
+        </div>
+    </div>
+</body>
+</html>

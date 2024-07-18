@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Usuario</title>
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
+    <!-- estilos -->
+    <link rel="stylesheet" href="../css/style_global.css">
+    <link rel="stylesheet" href="../css/style_usuario.css">
+    <link rel="stylesheet" href="../src/lib/jquery-ui/jquery-ui.min.css">
+    <!-- jquery -->
+    <script src="../js/lib/jquery-3.7.1.js"></script>
+    <script src="../src/lib/jquery-ui/jquery-ui.min.js"></script>
+    <!-- javascript -->
+    <script src="../js/nuevaMascota.js" defer></script>
+    <script src="../js/validaciones.js" defer></script>
+    <script src="../js/userMenu.js" defer></script>
+    <script src="../js/user.js" defer></script>
+    <script src="../js/script_global.js" defer></script>
+    <!-- JavaScript de Sweetalert -->
+    <script src="../src/lib/sweetalert/sweetalert2@11.js"></script>
+
+
+</head>
+<body>
+    <!--------------- cabecera ----------------->
+    <header class="cabecera">
+        <a href="principal.html" class="contenedorLogo">
+            <img src="../img/Logo_texto.png" alt="" class="imgLogo">
+        </a>
+        <nav class="mainMenu">
+            <button id="btnMenu" class="btnMainMenu">
+                &#8801;
+            </button>
+            <ul class="navLinks">
+                <li class="navItem"><a href="principal.html">Inicio</a></li>
+                <li class="navItem"><a href="vistaMascotas.html">Mascotas</a> </li> 
+                <li class="navItem"><a href="calendar.html">Calendario</a> </li> 
+                <li class="navItem"><a href="#" class="menuUser">Usuario</a> 
+                    <ul class="userMenuItems"><!-- MENU USUARIO  -->
+                        <li class="userItem"><a href="usuario.html">Configuración</a></li>
+                        <li class="userItem" id="adminUsuarios"><a href="admin_usuarios.html">Administración</a></li>
+                        <li class="userItem"><a href="../php/sessionDestroy.php">Cerrar Sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!---------------- cuerpo ----------------->
+    <main class="principal">
+        <div class="container">
+            <div class="titulo">
+                <button type="button" id="btnVolver">&#10094;&#10094;</button>
+                <h3>Configuración</h3>
+            </div>
+            <h4 id="tituloPerfil">Perfil</h4>  
+            <div class="contenedorFormularios" id="contenedorFormModificarUsuario">         
+                <form id="formularioModificarUsuario" enctype="multipart/form-data">
+                    <div id="contenedorFormulario">
+                        <div class="imagenUsuario">
+                            <div class="contenedorImagenUsuario"> 
+                            </div>  
+                            <div class="imgButtonContainer">
+                                <button class="subirImg" id="subirImg" type="button" onclick="pulsarFile()">Subir imagen</button>
+                                <div class="iconoInfo" title="Para cambiar la foto puedes arrastrar y soltar una en el recuadro superior o hacer click en el botón subir imagen">i</div>
+                            </div>
+                        </div>
+                        <div class="contenedorInputs">
+                            <label for="userName" class="labelForm">Nombre: <div class="iconoInfo" title="Recuerda: el nombre puede llevar minúsculas y mayúsculas, con o sin tildes. Use guión bajo para separar palabras">i</div> </label>
+                            <input type="text" name="user_name" id="userName" class="cajaTexto borderCajaTexto"><span id="errorUserName"></span>
+                            <label for="userEmail" class="labelForm">Email:</label>
+                            <input type="text" name="user_email" id="userEmail" class="cajaTexto borderCajaTexto" readonly><span id="errorUserEmail"></span>
+                            <input type="file" name="user_img" id="userImg" style="display: none">    
+                        </div>    
+                    </div>
+                    <div class="botonesModificarUsuario">
+                        <button type="button" id="btnCancelarUsuario" onclick="cancelarEditar()">Cancelar</button>
+                        <button type="button" id="btnEditarUsuario" onclick="editarUsuario()">Editar</button>
+                        <button type="submit" id="btnActualizarUsuario">Guardar</button>
+                    </div>
+                </form>
+            </div>
+            <h4 id="tituloPerfil">Opciones</h4>  
+            <div class="contenedorFormularios" id="contenedorOpciones">
+                <div id="contenedorCambiarEmail" class="elememtosOpciones">
+                    <p>Cambiar correo electrónico</p>
+                    <button id="btnCambiarEmail" onclick="abrirModalCambioEmail()">Cambiar</button>
+                </div>
+                <div id="contenedorRecuperarPass" class="elememtosOpciones">
+                    <p>Cambiar contraseña</p>
+                    <button id="btnCambiarPass" onclick="abrirModalCambioPassword()">Cambiar</button>
+                </div>
+                <div id="contenedorEliminarPerfil" class="elememtosOpciones">
+                    <p>Eliminar perfil</p>
+                    <button id="btnEliminarPerfil" onclick="abrirModalEliminarUsuario()">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!---------------- footer ----------------->
+    <footer class="pie">
+        <div class="pieContenedor">
+            <div class="pieLogos">
+                <a href="index.html"> 
+                    <img src="../img/Logo_texto.png" alt="" class="pielogo">
+                </a>
+                <div class="rrss">
+                    <a onclick="proximamente()"><img src="../img/logos/facebook_icon.png" alt="Icono facebook"></a>
+                    <a onclick="proximamente()"><img src="../img/logos/x_icon.png" alt="Icono X"></a>
+                    <a onclick="proximamente()"><img src="../img/logos/instagram_icon.png" alt="Icono instagram"></a>
+                    <a onclick="proximamente()"><img src="../img/logos/youtube_icon.png" alt="Icono Youtube"></a>
+                </div>
+            </div>
+            <div class="pieLogosDos">
+                <div class="pieLinks">
+                    <a onclick="proximamente()">FAQS</a>
+                    <a onclick="proximamente()">Sobre PetPlanner</a>        
+                    <a onclick="proximamente()">Soporte</a>
+                    <a onclick="proximamente()">Contacto</a>
+                </div>
+                <div class="pieLinks"> 
+                     <p>created by <a href="https://github.com/PatriciaCBweb" target="_blank">Patricia</a> & <a href="https://github.com/Celia-Rodriguez" target="_blank">Celia</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!---------------- MODAL CAMBIAR EMAIL ----------------->
+    <div class="modalesUsuario" id="modalCambioEmail">
+        <div class="contenedorForm">
+            <h4 class="tituloModal">Cambio de email</h4>
+            <form id="formCambioEmail" class="formularioModal">
+                <label for="emailCambioEmail" class="labelForm">Email nuevo</label>
+                <input type="text" name="email_cambio_email" id="emailCambioEmail" class="cajaTexto borderCajaTexto"><span id="errorEmailCambioEmail"></span>
+                <label for="passwordCambioEmail" class="labelForm">Introduzca la contraseña para cambiar el email</label>
+                <input type="password" name="password_cambio_email" id="passwordCambioEmail" class="cajaTexto borderCajaTexto"><span id="errorPasswordCambioEmail"></span>
+                <div class="btnSiteForm">
+                    <button type="button" class="btnForm btnCancelar" id="cerrarModalCambioEmail" onclick="cerrarModal('email')">Cerrar</button>
+                    <button type="submit" class="btnForm btnAceptar">Actualizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!---------------- MODAL CAMBIAR CONTRASEÑA ----------------->
+    <div class="modalesUsuario" id="modalCambioPassword">
+        <div class="contenedorForm">
+            <h4 class="tituloModal">Cambio de contraseña</h4>
+            <form id="formCambioPassword" class="formularioModal">
+                <label for="securityQuestion" class="labelForm">Pregunta de seguridad</label>
+                <select name="security_question" id="securityQuestion" class="cajaTexto borderCajaTexto">
+                    <option value="" selected disabled>Seleccione una pregunta de seguridad</option>
+                    <option value="nombre_de_mascota">¿Cuál es el nombre de tu primera mascota?</option>
+                    <option value="ciudad_nacimiento">¿En qué ciudad naciste?</option>
+                    <option value="nombre_madre">¿Cuál es el nombre de soltera de tu madre?</option>
+                </select><span id="errorSecurityQuestion"></span>
+                <label for="securityAnswer" class="labelForm">Respuesta:</label>
+                <input type="text" name="security_answer" id="securityAnswer" class="cajaTexto borderCajaTexto"><span id="errorSecurityAnswer"></span>
+                <label for="recoveryPassword" class="labelForm">Nueva Contraseña <div class="iconoInfo" title="Recuerda: la contraseña puede contener mayúsculas, minúsculas, números y ! ( ) & + *">i</div></label>
+                <input type="password" name="password" id="recoveryPassword" class="cajaTexto borderCajaTexto"><span id="errorrecoveryPassword"></span>
+                <label for="repeatRecoveryPassword" class="labelForm">Repetir nueva contraseña</label>
+                <input type="password" name="repeat_password" id="repeatRecoveryPassword" class="cajaTexto borderCajaTexto"><span id="errorRepeatRecoveryPassword"></span>
+                <div class="btnSiteForm">
+                    <button type="button" class="btnForm btnCancelar" id="cerrarModalCambioPasword" onclick="cerrarModal('password')">Cerrar</button>
+                    <button type="submit" class="btnForm btnAceptar">Actualizar</button>
+                </div> 
+            </form>
+        </div>
+    </div>
+
+    <!---------------- MODAL ELIMINAR USUARIO ----------------->
+    <div class="modalesUsuario" id="modalEliminarUsuario">
+        <div class="contenedorForm">
+            <h4 class="tituloModal">Eliminar perfil de usuario</h4>
+            <form id="formEliminarUsuario" class="formularioModal">
+                <label for="securityQuestionDelete" class="labelForm">Pregunta de seguridad</label>
+                <select name="security_question" id="securityQuestionDelete" class="cajaTexto borderCajaTexto">
+                    <option value="" selected disabled>Seleccione una pregunta de seguridad</option>
+                    <option value="nombre_de_mascota">¿Cuál es el nombre de tu primera mascota?</option>
+                    <option value="ciudad_nacimiento">¿En qué ciudad naciste?</option>
+                    <option value="nombre_madre">¿Cuál es el nombre de soltera de tu madre?</option>
+                </select><span id="errorSecurityQuestionDelete"></span>
+                <label for="securityAnswerDelete">Respuesta:</label>
+                <input type="text" name="security_answer" id="securityAnswerDelete" class="cajaTexto borderCajaTexto"><span id="errorSecurityAnswerDelete"></span>
+                <label for="passwordDelete" class="labelForm">Contraseña</label>
+                <input type="password" name="password" id="passwordDelete" class="cajaTexto borderCajaTexto"><span id="errorPasswordDelete"></span>
+                <label for="repeatPasswordDelete" class="labelForm">Repetir contraseña</label>
+                <input type="password" name="repeat_password" id="repeatPasswordDelete" class="cajaTexto borderCajaTexto"><span id="errorRepeatPasswordDelete"></span>
+                <div class="btnSiteForm">
+                    <button type="button" class="btnForm btnCancelar" id="cerrarModalEliminarUsuario" onclick="cerrarModal('delete')">Cerrar</button>
+                    <button type="submit" class="btnForm btnAceptar">Eliminar</button>
+                </div> 
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

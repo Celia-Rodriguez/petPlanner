@@ -1,0 +1,476 @@
+/*************************************************************/
+/****************************** MAIN *************************/
+/*************************************************************/
+.iconoInfo{
+    margin-left: 5px; /*añadimos margen a la izquierda*/
+    width: 20px; /*ancho del elemento*/
+    height: 20px; /*altura del elemento*/
+    background-color: #43C2D3; /*color de fondo*/
+    border-radius: 30px; /*esquinas redondeadas*/
+    color: white; /*color del texto*/
+    font-weight: bold; /*texto en negrita para que se vea mejor*/
+    text-align: center; /*alineamos el texto al centro*/
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*tipografía con serifa*/
+    font-size: 18px; /*tamaño del texto*/
+    cursor: help; /*cuando colocamos encima el cursor aparece una interrogación*/
+}
+
+.labelForm{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    align-items: baseline; /*alineamos transversalmente a la línea base*/
+    font-size: 20px; /*tamaño del texto*/
+} 
+
+.principal .container{
+    max-width: 1200px; /*ancho máximo para que no se haga demasiado grande*/
+    background-color: #a6e3eb; /*color del fondo*/
+    margin: 0 auto; /*margen auto a los lados para centrarlo*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    box-shadow: 0 0 5px #1eadc0; /*sombra para dar sensación de elevación*/
+}
+
+.principal .container #btnVolver{
+    padding: 2px 10px 5px 10px; /*márgenes interiores*/
+    background: linear-gradient(white, #83dce7); /*fondo del botón con degradado lineal*/
+    border-radius: 5px; /*esquinas redondeadas*/
+    border: 2px solid #1eadc0; /*borde del botón*/
+    cursor: pointer; /*cambiamos como se ve el puntero cuando pasa por encima*/
+    /* flex-basis: 1; */
+    text-align: center; /*alineamos el texto al centro*/
+    font-size: 22px; /*tamaño del texto*/
+    color: #009999; /*color del texto*/
+}
+
+.principal .container #btnVolver:hover{/*estilos para cuando pasamos por encima del botón*/
+    box-shadow: 0 0 5px #16c7c7; /*sombra para dar sensación de elevación*/
+    background-image: linear-gradient(to top, white, white); /*color de fondo blanco*/
+}
+
+.principal .container h3{
+    text-align: center; /*alineamos el texto al centro*/
+    margin: auto;/*margen auto para que se centre*/
+}
+
+.principal .container .titulo{
+    margin: 150px auto 25px auto; /*márgenes exteriores. auto para que se centre en la página*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    align-items: center; /*elementos centrados sobre el eje transversal*/
+    width: 60%; /*ancho*/
+    font-family: "Geranium"; /*fuente del texto*/
+    font-size: 30px; /*tamaño del texto*/
+    letter-spacing: 0.1em; /*espacio entre caracteres para facilitar la lectura*/
+}
+
+.principal .container h4{
+    width: 60%; /*ancho*/
+    margin: 10px auto 5px auto; /*márgenes exteriores. auto para que se centre en la página*/
+    font-family: "Geranium"; /*tipografía del texto*/
+    font-size: 24px; /*tamaño del texto*/
+    letter-spacing: 0.1em; /*espacio entre caracteres para facilitar la lectura*/
+}
+
+.principal .container .contenedorFormularios{
+    width: 60%; /*ancho*/
+    min-width: 500px; /*ancho mínimo*/
+    margin: 0 auto 50px auto; /*márgenes exteriores. auto para que se centre en la página*/
+    background-color: white; /*color del fondo*/
+    padding: 30px; /*márgenes interiores*/  
+    border-radius: 10px; /*esquinas redondeadas*/
+    box-shadow: 0 0 5px #1eadc0; /*sombra para dar sensación de elevación*/
+}
+
+.principal .container #contenedorFormModificarUsuario{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    justify-content: space-between; /*elementos interiores colocados con espacio entre ellos*/
+}
+
+.principal .container .contenedorFormularios #formularioModificarUsuario{
+    width: 100%; /*ancho*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+}
+
+.principal .container .contenedorFormularios #formularioModificarUsuario #contenedorFormulario{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+}
+
+.principal .container .contenedorFormularios #formularioModificarUsuario #contenedorFormulario .imagenUsuario{
+    padding: 5px 30px 5px 0px; /*márgenes interiores*/  
+    width: 60%; /*ancho*/
+    min-height: 230px; /*altura mínima*/
+}
+
+.principal .container .contenedorFormularios #formularioModificarUsuario .imagenUsuario .contenedorImagenUsuario{
+    width: 100%; /*ancho*/
+    height: 90%; /*altura*/
+    background-color: #ebf2f3; /*color del fondo*/
+    border-radius: 20px; /*redondeamos las esquinas*/
+    border: 3px dashed #45c3d3; /*borde*/
+    margin-bottom: 10px; /*margen inferior para separar del siguiente elemento*/
+    max-height: 192px; /*altura máxima*/
+}
+
+.principal .container .contenedorFormularios #formularioModificarUsuario .imagenUsuario .contenedorImagenUsuario img{
+    border-radius: 20px; /*redondeamos las esquinas*/
+    width: 100%; /*ancho completo*/
+    height: 100%; /*altura completa*/
+    object-fit: cover; /*se redimensiona la imagen para mantener su proporción*/
+}
+
+.principal .container .contenedorFormularios #formularioModificarUsuario .imagenUsuario .imgButtonContainer{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    justify-content: flex-end; /*alineación horizontal al final*/
+    align-items: center; /*alineación vertical al centro*/
+}
+
+.principal .container .contenedorFormularios #formularioModificarUsuario .imagenUsuario .imgButtonContainer .subirImg{ 
+    cursor: pointer; /*el puntero cambia al pasar por encima*/
+    margin: 10px 0 10px auto; /*márgenes externos*/
+    padding: 5px 10px; /*márgenes internos*/
+    font-size: 16px !important; /*tamaño de la fuente*/
+    background-color: #66dae9; /*color del fondo*/
+    border: 2px solid #3ab8c9; /*añadimos un borde*/
+    border-radius: 5px; /*esquinas redondeadas*/
+}
+
+.principal .container .contenedorFormularios #formularioModificarUsuario .contenedorInputs{
+    margin-top: 20px; /*margen inferior para separar de los siguientes elementos*/
+    margin-left: 10px; /*margen a la izquierda para separar del borde*/
+    width: 100%; /*ancho completo*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+}
+
+.principal .container .contenedorFormularios #formularioModificarUsuario .cajaTexto{
+    margin-bottom: 20px; /*margen superior para separar de los siguientes elementos*/
+    padding: 7px; /*añadimos márgenes internos para separar de los bordes*/
+    font-size: 20px; /*tamaño del texto*/
+    border-radius: 3px; /*esquinas redondeadas*/
+}
+
+.principal .container .contenedorFormularios #formularioModificarUsuario .borderCajaTexto{
+    border: 2px solid #aaa; /*añadimos un borde*/
+}
+
+.principal .container .contenedorFormularios #formularioModificarUsuario .error{
+    border: 2px solid red; /*añadimos un borde*/
+}
+
+.principal .container .contenedorFormularios #formularioModificarUsuario #errorUserName, 
+.principal .container .contenedorFormularios #formularioModificarUsuario #errorUserEmail{
+    margin-bottom: 10px; /*margen superior para separar de los siguientes elementos*/
+    background-color: rgba(255,0,0,0.2); /*color del fondo*/
+    padding: 7px 5px; /*añadimos márgenes internos para separar de los bordes*/
+    border-radius: 3px; /*esquinas redondeadas*/
+    display: none; /*ocultamos mientras no se necesite*/
+    margin-top: -20px; /*añadimos en la parte superior un margen negativo para pegar al elemento anterior*/
+} 
+
+.principal .container .contenedorFormularios #formularioModificarUsuario .botonesModificarUsuario{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en fila*/
+    justify-content: flex-end; /*elementos interiores con espacio entre ellos*/
+}
+
+.principal .container .contenedorFormularios #formularioModificarUsuario .botonesModificarUsuario button{
+    width: 30%; /*ancho*/
+    margin: 10px 0 10px 10px; /*márgenes exteriores*/
+    padding: 7px; /*márgenes internos*/
+    font-size: 20px; /*tamaño de la fuente*/
+    cursor: pointer; /*cursor al pasar por encima*/
+    background-color: #66dae9; /*color del fondo*/
+    border: 2px solid #3ab8c9; /*borde*/
+    border-radius: 5px; /*esquinas redondeadas*/
+}
+
+.principal .container .contenedorFormularios #formularioModificarUsuario .botonesModificarUsuario #btnCancelarUsuario{
+    background-color: rgba(255, 0, 0, 0.4); /*color del fondo*/
+    border: 2px solid rgba(231, 81, 81, 0.7); /*borde*/
+}
+
+.principal .container #contenedorOpciones button{
+    width: 30%; /*ancho*/
+    margin: 10px 0 10px auto; /*márgenes exteriores*/
+    padding: 7px; /*márgenes internos*/
+    font-size: 20px; /*tamaño de la fuente*/
+    cursor: pointer; /*cursor al pasar por encima*/
+    background-color: #66dae9; /*color del fondo*/
+    border: 2px solid #3ab8c9; /*borde*/
+    border-radius: 5px; /*esquinas redondeadas*/
+}
+
+.principal .container .contenedorFormularios #formularioModificarUsuario .botonesModificarUsuario button:hover,
+.principal .container #contenedorOpciones button:hover{
+    background-color: white; /*color del fondo*/
+    color: teal; /*color del texto*/
+    border: 2px solid #229faf; /*borde*/
+}
+
+#ui-id-1 {
+    max-height: 250px !important; /*altura máxima*/
+    overflow: scroll; /*El contenido es recortado y el navegador web usa las barras de desplazamiento, se haya recortado contenido o no*/
+}
+
+.principal .container #contenedorOpciones{
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    margin-bottom: 100px; /*margen inferior para separar de los elementos siguientes*/
+}
+
+.principal .container #contenedorOpciones .elememtosOpciones{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en fila*/
+    align-items: center; /*alineación vertical al centro*/
+    justify-content: flex-start; /*alineación horizontal a la izquierda*/
+}
+
+.principal .container #contenedorOpciones .elememtosOpciones p{
+    margin-right: 20px; /*margen a la derecha para separar*/
+}
+
+/*------------ MODALES ---------------*/
+.modalesUsuario{
+    background-color: rgba(85, 177, 177,0.5); /*color del fondo*/
+    padding: 50px; /*márgenes internos*/
+    position: fixed; /*posición fija para que no se mueva*/
+    z-index: 2; /*lo ponemos por encima del resto de elementos*/
+    width: 100%; /*ancho completo*/
+    height: 100%; /*altura completa*/
+    top: 0; /*posición desde la parte superior*/
+    left: 0; /*posición desde la izquierda*/
+    display: none; /*no lo mostramos hasta que sea necesario*/
+    justify-content: center; /*alineación horizontal en el centro*/
+    align-content: center;  /*alineación vertical en el centro*/
+}
+
+.modalesUsuario .tituloModal{
+    font-family: "Geranium"; /*fuente del texto */
+    text-align: center; /*alineación del texto*/
+    font-size: 24px; /*tamaño del texto*/
+    text-transform: uppercase; /*lo ponemos en mayúsculas*/
+    letter-spacing: 0.1em; /*espacio entre caracteres para mejorar la lectura*/
+    padding-bottom: 25px; /*margen inferior para separar de los elementos siguientes*/
+}
+
+.modalesUsuario .contenedorForm{
+    width: 600px; /*ancho*/
+    margin: auto; /*márgenes externos automáticos*/
+    background-color: white; /*color del fondo*/
+    padding: 40px 50px; /*márgenes internos para dar espacio en el borde */
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    justify-content: center; /*alineación horizontal en el centro*/
+    border-radius: 10px; /*esquinas redondeadas*/
+}
+.modalesUsuario .contenedorForm .formularioModal{
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+}
+
+.modalesUsuario .labelForm{
+    font-size: 18px; /*tamaño del texto*/
+}
+
+.modalesUsuario .cajaTexto{
+    margin-bottom: 20px; /*margen el la parte inferior para separar*/
+    padding: 7px; /*márgenes internos para dar espacio en el borde */
+    font-size: 20px; /*tamaño del texto*/
+    border-radius: 3px; /*esquinas redondeadas*/
+}
+
+.modalesUsuario .borderCajaTexto{
+    border: 2px solid #aaa; /*borde*/
+}
+
+.modalesUsuario .error{
+    border: 2px solid red; /*borde*/
+}
+
+.modalesUsuario .contenedorForm .formularioModal .btnSiteForm{
+    display: flex; /*contenedor flexible*/
+    justify-content: flex-end; /*elementos colocados en el extremos derecho*/
+}
+
+.modalesUsuario .contenedorForm .formularioModal .error{
+    border: 2px solid red; /*borde*/
+}
+
+.modalesUsuario .contenedorForm .formularioModal #errorEmailCambioEmail, 
+.modalesUsuario .contenedorForm .formularioModal #errorPasswordCambioEmail, 
+.modalesUsuario .contenedorForm .formularioModal #errorSecurityQuestion, 
+.modalesUsuario .contenedorForm .formularioModal #errorSecurityAnswer,
+.modalesUsuario .contenedorForm .formularioModal #errorrecoveryPassword, 
+.modalesUsuario .contenedorForm .formularioModal #errorRepeatRecoveryPassword, 
+.modalesUsuario .contenedorForm .formularioModal #errorSecurityQuestionDelete, 
+.modalesUsuario .contenedorForm .formularioModal #errorSecurityAnswerDelete,
+.modalesUsuario .contenedorForm .formularioModal #errorPasswordDelete, 
+.modalesUsuario .contenedorForm .formularioModal #errorRepeatPasswordDelete{
+    margin-bottom: 10px; /*margen el la parte inferior para separar*/
+    background-color: rgba(255,0,0,0.2); /*color del fondo*/
+    padding: 7px 5px; /*márgenes internos para dar espacio en el borde */
+    border-radius: 3px; /*esquinas redondeadas*/
+    display: none; /*lo ocultamos hasta que sea necesario*/
+    margin-top: -20px; /*margen superior negativo para pegarlo al elemento superior*/
+}
+
+.modalesUsuario .btnAceptar{
+    cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+    margin: 10px 0px 10px 10px; /*márgenes exteriores.*/
+    padding: 7px; /*márgenes interiores*/
+    font-size: 20px; /*tamaño del texto*/
+    width: 30%; /*ancho del elemento*/
+    cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+    background-color: #66dae9; /*color del fondo*/
+    border: 2px solid #3ab8c9; /*borde*/
+    border-radius: 5px; /*esquinas redondeadas*/
+}
+
+.modalesUsuario .btnAceptar:hover{
+    background-color: white; /*color del fondo*/
+    color: teal; /*color del texto*/
+    border: 2px solid #229faf; /*borde*/
+}
+
+.modalesUsuario .btnCancelar{
+    cursor: pointer; /*aspecto del cursor cuando pasa por encima*/
+    margin: 10px 0px 10px 20px; /*márgenes exteriores.*/
+    padding: 7px; /*márgenes interiores*/
+    font-size: 20px; /*tamaño del texto*/
+    width: 30%; /*ancho del elemento*/
+    background-color: rgba(255, 0, 0,0.4); /*color del fondo*/
+    border: 2px solid rgba(231, 81, 81,0.7); /*borde*/
+    border-radius: 5px; /*esquinas redondeadas*/
+}
+
+.modalesUsuario .btnCancelar:hover{
+    background-color: white; /*color del fondo*/
+    color: #9b0000; /*color del texto*/
+    border: 2px solid #b41f1f; /*borde*/
+}
+/************************** FIN MAIN *************************/
+
+/*************************************************************/
+/******************* ESTILOS MEDIA QUERY *********************/
+/*************************************************************/
+@media screen and (max-width: 768px){
+    .principal .container{
+        width: 100%; /*ancho del elemento*/
+        max-width: 700px; /*ancho máximo para que no se haga demasiado grande*/
+        min-width: 425px; /*ancho mínimo*/
+    }
+
+    .principal .container #btnVolver{
+        padding: 1px 6px 1px 6px; /*márgenes interiores*/
+        border-radius: 5px; /*esquinas redondeadas*/
+        font-size: 18px; /*tamaño del texto*/
+    }
+
+    .principal .container .titulo{
+        margin: 100px auto 20px auto; /*márgenes exteriores. auto para que se centre en la página*/
+        max-width: 560px; /*ancho máximo para que no se haga demasiado grande*/
+        padding-left: 2%; /*añadimos margen a la izquierda para separar del borde*/
+        padding-right: 10%; /*añadimos margen a la derecha para separar del borde*/
+        font-size: 27px; /*tamaño del texto*/
+        width: 100%; /*ancho completo*/
+    }
+
+    .principal .container .contenedorFormularios{
+        width: 100%; /*ancho completo*/
+        max-width: 550px; /*ancho máximo para que no se haga demasiado grande*/
+        min-width: 425px; /*ancho mínimo*/
+        margin: 0 auto 50px auto; /*márgenes exteriores. auto para que se centre en la página*/
+        padding: 20px; /*márgenes interiores*/
+        border-radius: 8px; /*esquinas redondeadas*/
+        font-size: 18px; /*tamaño del texto*/
+    }
+
+    .principal .container h4{
+        width: 100%; /*ancho completo*/
+        max-width: 560px; /*ancho máximo para que no se haga demasiado grande*/
+        margin: 10px auto 5px auto; /*márgenes exteriores. auto para que se centre en la página*/
+        padding-left: 2%; /*añadimos margen a la izquierda para separar del borde*/
+        font-family: "Geranium"; /*tipografía del texto*/
+    }
+
+    .labelForm{
+        font-size: 18px; /*tamaño del texto*/
+        display: flex; /*contenedor flexible*/
+    }
+
+    .principal .container #contenedorFormModificarUsuario {
+        padding: 30px; /*márgenes internos*/
+    }
+
+    .principal .container .contenedorFormularios #formularioModificarUsuario #contenedorFormulario {
+        flex-direction: column; /*colocamos los elementos interiores en columna*/
+    }
+
+    .principal .container .contenedorFormularios #formularioModificarUsuario #contenedorFormulario .contenedorImagenUsuario{
+        max-height: 300px; /*altura máxima*/
+    }
+
+    .principal .container .contenedorFormularios #formularioModificarUsuario #contenedorFormulario .imagenUsuario{
+        padding: 5px 10px 5px 0px; /*márgenes internos*/
+        margin: 0px auto 0px auto; /*márgenes externos*/
+        width: 85%; /*ancho*/
+        height: 100%; /*altura*/
+        min-height: 230px; /*ancho mínimo*/
+    }
+
+    .principal .container .contenedorFormularios #formularioModificarUsuario .contenedorInputs{
+        margin-left: 0; /*eliminamos el margen que le dimos a la izquierda*/
+    }
+
+    .principal .container .contenedorFormularios #formularioModificarUsuario .cajaTexto{
+        font-size: 18px; /*tamaño del texto*/
+        width: 100%; /*ancho completo*/
+    }
+
+    .principal .container .contenedorFormularios #formularioModificarUsuario #errorUserName, 
+    .principal .container .contenedorFormularios #formularioModificarUsuario #errorUserEmail,
+    .modalesUsuario .contenedorForm .formularioModal #errorEmailCambioEmail, 
+    .modalesUsuario .contenedorForm .formularioModal #errorPasswordCambioEmail, 
+    .modalesUsuario .contenedorForm .formularioModal #errorSecurityQuestion, 
+    .modalesUsuario .contenedorForm .formularioModal #errorSecurityAnswer,
+    .modalesUsuario .contenedorForm .formularioModal #errorrecoveryPassword, 
+    .modalesUsuario .contenedorForm .formularioModal #errorRepeatRecoveryPassword, 
+    .modalesUsuario .contenedorForm .formularioModal #errorSecurityQuestionDelete, 
+    .modalesUsuario .contenedorForm .formularioModal #errorSecurityAnswerDelete,
+    .modalesUsuario .contenedorForm .formularioModal #errorPasswordDelete, 
+    .modalesUsuario .contenedorForm .formularioModal #errorRepeatPasswordDelete{
+        font-size: 18px; /*tamaño del texto*/
+    }
+
+    .principal .container .contenedorFormularios #formularioModificarUsuario .botonesModificarUsuario button,
+    .principal .container #contenedorOpciones button{
+        font-size: 18px;
+    }
+
+    /***************** MODALES ********************/
+    .modalesUsuario {
+        padding: 0; /*eliminamos el margen interior*/
+    }
+    
+    .modalesUsuario .contenedorForm {
+        width: 85%; /*ancho*/
+        min-width: 425px; /*ancho mínimo*/
+        padding: 25px; /*margen interior para separar del borde*/
+        border-radius: 8px; /*esquinas redondeadas*/
+    }
+
+    .modalesUsuario .contenedorForm .cajaTexto{
+        font-size: 18px; /*tamaño del texto*/
+        width: 100%; /*ancho completo*/
+    }
+
+    .modalesUsuario .btnAceptar,
+    .modalesUsuario .btnCancelar{
+        font-size: 18px; /*tamaño del texto*/
+    }
+}

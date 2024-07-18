@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascotas</title>
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
+    <!-- estilos -->
+    <link rel="stylesheet" href="../css/style_global.css">
+    <link rel="stylesheet" href="../css/style_vistaMascotas.css">
+    <link rel="stylesheet" href="../src/lib/jquery-ui/jquery-ui.min.css">
+    <!-- jquery -->
+    <script src="../js/lib/jquery-3.7.1.js"></script>
+    <script src="../src/lib/jquery-ui/jquery-ui.min.js"></script>
+    <!-- javascript -->
+    <script src="../js/vistaMascotas.js" defer></script>
+    <script src="../js/validaciones.js" defer></script>
+    <script src="../js/userMenu.js" defer></script>
+    <script src="../js/script_global.js" defer></script>
+    <!-- JavaScript de Sweetalert -->
+    <script src="../src/lib/sweetalert/sweetalert2@11.js"></script>
+
+
+</head>
+<body>
+    <!--------------- cabecera ----------------->
+    <header class="cabecera">
+        <a href="principal.html" class="contenedorLogo">
+            <img src="../img/Logo_texto.png" alt="logo de PetPlanner" class="imgLogo">
+        </a>
+        <nav class="mainMenu">
+            <button id="btnMenu" class="btnMainMenu">
+                &#8801;
+            </button>
+            <ul class="navLinks">
+                <li class="navItem"><a href="principal.html">Inicio</a></li> 
+                <li class="navItem"><a href="vistaMascotas.html">Mascotas</a> </li> 
+                <li class="navItem"><a href="calendar.html">Calendario</a> </li> 
+                <li class="navItem"><a href="#" class="menuUser">Usuario</a> 
+                    <ul class="userMenuItems"><!-- MENU USUARIO  -->
+                        <li class="userItem"><a href="usuario.html">Configuración</a></li>
+                        <li class="userItem" id="adminUsuarios"><a href="admin_usuarios.html">Administración</a></li>
+                        <li class="userItem"><a href="../php/sessionDestroy.php">Cerrar Sesión</a></li>
+                    </ul>
+                </li> <!-- Esta clase está vacía es solo para llamar al menú -->
+            </ul>
+        </nav>
+    </header>
+    <!---------------- cuerpo ----------------->
+    <main class="principal">
+        <div class="container">
+            <div class="titulo">
+                <button type="button" id="btnVolver">&#10094;&#10094;</button>
+                <h3>Mis mascotas</h3>
+            </div>
+            <div class="contenedorMascotas">
+                <ul class="tabList" id="listaPestanyas">
+                    <li class="tabItem active" id="id1" onclick="seleccionar('id1')">Mascota 1</li>
+                    <li class="tabItem" id="id2" onclick="seleccionar('id2')">Mascota 2</li>
+                </ul>
+                <div class="contenedorFichaMascota">
+                    <form id="fichaMascota" class="fichaMascota" method="post" enctype="multipart/form-data">
+                        <div class="botonesMascota">
+                            <button type="submit" id="btnGuardar">Guardar</button>
+                            <button type="button" id="btnEditarMascota">Editar</button>
+                            <button type="button" id="btnCancelarMascota">Cancelar</button>
+                            <button type="button" id="btnEliminarMascota">Eliminar</button>
+                        </div>
+                        <div class="contenidoFichaMascota">
+                            <div class="panelIzquierdo">
+                                <div class="contenedorImagenMascota"> 
+                                </div>  
+                                <button type="button" class="subirImg" id="subirImg">Subir imagen</button>
+                            </div>
+                            <div class="panelDerecho">
+                                <label for="petName" class="labelForm">Nombre:</label>
+                                <input type="text" name="pet_name" id="petName" class="cajaTexto borderCajaTexto"><span id="errorPetName"></span>
+                                <label for="petCode" class="labelForm">Código:</label>
+                                <input type="text" name="pet_code" id="petCode" class="cajaTexto borderCajaTexto" readonly>
+                                <label for="petDate" class="labelForm">Fecha de nacimiento:</label>
+                                <input type="date" name="pet_date" id="petDate" class="cajaTexto borderCajaTexto"><span id="errorPetDate"></span>
+                                <label for="petType" class="labelForm">Tipo:</label>
+                                <input type="text" name="pet_type" id="petType" class="cajaTexto borderCajaTexto" value="Perro" readonly><span id="errorPetType"></span>
+                                <label for="petBreed" class="labelForm">Raza:</label>
+                                <input id="petBreed" name="pet_breed" class="cajaTexto borderCajaTexto"><span id="errorPetBreed"></span>
+                                <label for="petWeight" class="labelForm">Peso:</label>
+                                <input type="text" name="pet_weight" id="petWeight" class="cajaTexto borderCajaTexto"><span id="errorPetWeight"></span>
+                                <input type="file" name="pet_img" id="petImg" class="petImg" style="display: none">
+                                <div class="generoMascota">
+                                    <p>Género:</p>
+                                    <div class="contenedorCheckBox">
+                                        <div>
+                                            <input type="radio" name="pet_gender" id="petGenderFemale" class="petGender" value="hembra">
+                                            <label for="petGenderFemale" class="labelForm">Hembra</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="pet_gender" id="petGenderMale" class="petGender" value="macho">
+                                            <label for="petGenderMale" class="labelForm">Macho</label>
+                                        </div>
+                                    </div>
+                                    <span id="errorPetGender"></span> 
+                                </div>
+                                <div class="chipMascota">
+                                    <p>Chip:</p>
+                                    <div class="contenedorCheckBox">
+                                        <div>
+                                            <input type="radio" name="pet_chip" class="petChip" value="si" id="petChipTrue">
+                                            <label for="petChipTrue" class="labelForm">Sí</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="pet_chip" class="petChip" value="no" id="petChipFalse">
+                                            <label for="petChipFalse" class="labelForm">No</label>
+                                        </div>
+                                    </div>
+                                    <span id="errorChip"></span>  
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!---------------- footer ----------------->
+    <footer class="pie">
+        <div class="pieContenedor">
+            <div class="pieLogos">
+                <a href="index.html"> 
+                    <img src="../img/Logo_texto.png" alt="" class="pielogo">
+                </a>
+                <div class="rrss">
+                    <a onclick="proximamente()"><img src="../img/logos/facebook_icon.png" alt="Icono facebook"></a>
+                    <a onclick="proximamente()"><img src="../img/logos/x_icon.png" alt="Icono X"></a>
+                    <a onclick="proximamente()"><img src="../img/logos/instagram_icon.png" alt="Icono instagram"></a>
+                    <a onclick="proximamente()"><img src="../img/logos/youtube_icon.png" alt="Icono Youtube"></a>
+                </div>
+            </div>
+            <div class="pieLogosDos">
+                <div class="pieLinks">
+                    <a onclick="proximamente()">FAQS</a>
+                    <a onclick="proximamente()">Sobre PetPlanner</a>        
+                    <a onclick="proximamente()">Soporte</a>
+                    <a onclick="proximamente()">Contacto</a>
+                </div>
+                <div class="pieLinks"> 
+                     <p>created by <a href="https://github.com/PatriciaCBweb" target="_blank">Patricia</a> & <a href="https://github.com/Celia-Rodriguez" target="_blank">Celia</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

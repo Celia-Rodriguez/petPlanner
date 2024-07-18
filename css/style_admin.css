@@ -1,0 +1,206 @@
+/*************************************************************/
+/****************************** MAIN *************************/
+/*************************************************************/
+.iconoInfo{
+    margin-left: 5px; /*añadimos margen a la izquierda*/
+    width: 20px; /*ancho del elemento*/
+    height: 20px; /*altura del elemento*/
+    background-color: #43C2D3; /*color de fondo*/
+    border-radius: 30px; /*esquinas redondeadas*/
+    color: white; /*color del texto*/
+    font-weight: bold; /*texto en negrita para que se vea mejor*/
+    text-align: center; /*alineamos el texto al centro*/
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*tipografía con serifa*/
+    font-size: 18px; /*tamaño del texto*/
+    cursor: help; /*cuando colocamos encima el cursor aparece una interrogación*/
+}
+
+
+.principal .container{
+    max-width: 1200px; /*ancho máximo para que no se haga demasiado grande*/
+    background-color: #a6e3eb; /*color del fondo*/
+    margin: 0 auto; /*margen auto a los lados para centrarlo*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    box-shadow: 0 0 5px #1eadc0; /*sombra para dar sensación de elevación*/
+}
+
+.principal .container #btnVolver{
+    padding: 2px 10px 5px 10px; /*márgenes interiores*/
+    background: linear-gradient(white, #83dce7); /*fondo del botón con degradado lineal*/
+    border-radius: 5px; /*esquinas redondeadas*/
+    border: 2px solid #1eadc0; /*borde del botón*/
+    cursor: pointer; /*cambiamos como se ve el puntero cuando pasa por encima*/
+    /* flex-basis: 1; */
+    text-align: center; /*alineamos el texto al centro*/
+    font-size: 22px; /*tamaño del texto*/
+    color: #009999; /*color del texto*/
+}
+
+.principal .container #btnVolver:hover{/*estilos para cuando pasamos por encima del botón*/
+    box-shadow: 0 0 5px #16c7c7; /*sombra para dar sensación de elevación*/
+    background-image: linear-gradient(to top, white, white); /*color de fondo blanco*/
+}
+
+.principal .container h3{
+    text-align: center; /*alineamos el texto al centro*/
+    margin: auto;/*margen auto para que se centre*/
+}
+
+.principal .container .titulo{
+    margin: 150px auto 25px auto; /*márgenes exteriores. auto para que se centre en la página*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    align-items: center; /*elementos centrados sobre el eje transversal*/
+    width: 60%; /*ancho*/
+    font-family: "Geranium"; /*fuente del texto*/
+    font-size: 30px; /*tamaño del texto*/
+    letter-spacing: 0.1em; /*espacio entre caracteres para facilitar la lectura*/
+}
+
+.principal .container .contenedorTablaUsuarios{
+    width: 60%; /*ancho*/
+    min-width: 500px; /*ancho mínimo*/
+    margin: 0 auto 70px auto; /*márgenes exteriores. auto para que se centre en la página*/
+    background-color: white; /*color del fondo*/
+    padding: 30px; /*márgenes interiores*/  
+    border-radius: 20px; /*esquinas redondeadas*/
+    margin-bottom: 40px; /*margen inferior para separar del elemento siguiente*/
+    box-shadow: 0 0 5px #1eadc0; /*sombra para dar sensación de elevación*/
+}
+
+
+.principal .container .contenedorTablaUsuarios .containerTextInput{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    align-items: center; /*elementos centrados sobre el eje transversal*/
+    justify-content: flex-end; /*colocamos los elementos a la derecha*/
+}
+
+.principal .container .contenedorTablaUsuarios .cajaTexto {
+    padding: 5px; /*márgenes interiores*/ 
+    font-size: 18px; /*tamaño del texto*/
+    border-radius: 3px;  /*esquinas redondeadas*/
+    border: 2px solid #aaa; /*añadimos un borde*/
+    margin-right: 0; /*margen inferior para separar del elemento anterior*/
+    margin-left: 6px; /*margen a la izquierda para dar espacio*/
+}
+
+.principal .container .contenedorTablaUsuarios #tablaUsuarios{
+    font-size: 17px; /*tamaño del texto*/
+    border-collapse: collapse; /*borde de la tabla colapsado (solo una línea)*/
+    border: 2px solid #aaa; /*añadimos un borde*/
+    width: 100%; /*ancho completo*/
+}
+
+.principal .container .contenedorTablaUsuarios #tablaUsuarios thead{
+    background-color: #66dae9; /*color de fondo*/
+    font-family: "Geranium"; /*tipo de fuente*/
+    letter-spacing: 0.1em; /*añadimos espacio entre caracteres para mejor lectura*/
+    text-transform: uppercase; /*texto en mayúsculas*/
+    font-size: 20px; /*tamaño del texto*/
+}
+
+.principal .container .contenedorTablaUsuarios #tablaUsuarios th{
+    padding: 6px; /* márgenes internos*/
+}
+
+.principal .container .contenedorTablaUsuarios #tablaUsuarios td{
+     padding: 5px; /* márgenes internos*/
+     border: 1px solid #bbb; /*añadimos un borde*/
+}
+
+.principal .container .contenedorTablaUsuarios #tablaUsuarios td:has(>select){
+    margin: 0px; /*sin márgenes externos*/
+    padding: 0; /*sin márgenes internos*/
+}
+
+.principal .container .contenedorTablaUsuarios #tablaUsuarios td select{
+    font-size: 17px; /*tamaño del texto*/
+    margin: 0px; /*sin márgenes externos*/
+    padding: 3px 0; /*márgenes internos*/
+    width: 100%; /*ancho completo*/
+    min-height: 100%; /*altura mínima*/
+    border: none; /*eliminamos el borde*/
+}
+
+.principal .container #btnArriba{
+    padding: 0px 5px 6px 5px; /*márgenes internos*/
+    background: linear-gradient(white, #83dce7); /*añadimos un fondo con degradado lineal*/
+    border-radius: 5px;  /*esquinas redondeadas*/
+    border: 2px solid #1eadc0; /*añadimos un borde*/
+    cursor: pointer; /*el puntero cambia cuando pasa por encima*/
+    /* flex-grow: 1; */
+    flex-basis: 1;
+    text-align: center; /*alineación del texto en el centro*/
+    font-size: 18px; /*tamaño del texto*/
+    color: #009999; /*color del texto*/
+    display: none; /*oculto mientras no sea necesario*/
+}
+
+.principal .container #btnArriba:hover{
+    box-shadow: 0 0 5px #16c7c7; /*le aplicamos una pequeña sombra en los bordes*/
+    background-image: linear-gradient(to top, white, white); /*añadimos un fondo con degradado lineal*/
+}
+
+/************************** FIN MAIN *************************/
+
+/*************************************************************/
+/******************* ESTILOS MEDIA QUERY *********************/
+/*************************************************************/
+@media screen and (max-width: 768px){
+    .principal .container{
+        width: 100%; /*ancho del elemento*/
+        max-width: 700px; /*ancho máximo para que no se haga demasiado grande*/
+        min-width: 425px; /*ancho mínimo*/
+    }
+
+    .principal .container #btnVolver{
+        padding: 1px 6px 1px 6px; /*márgenes interiores*/
+        border-radius: 5px; /*esquinas redondeadas*/
+        font-size: 18px; /*tamaño del texto*/
+    }
+
+    .principal .container .titulo{
+        margin: 100px auto 20px auto; /*márgenes exteriores. auto para que se centre en la página*/
+        max-width: 560px; /*ancho máximo para que no se haga demasiado grande*/
+        padding-left: 2%; /*añadimos margen a la izquierda para separar del borde*/
+        padding-right: 10%; /*añadimos margen a la derecha para separar del borde*/
+        font-size: 27px; /*tamaño del texto*/
+        width: 100%; /*ancho completo*/
+    }
+
+    .principal .container .contenedorTablaUsuarios{
+        width: 100%; /*ancho completo*/
+        max-width: 550px; /*ancho máximo para que no se haga demasiado grande*/
+        min-width: 425px; /*ancho mínimo*/
+        margin: 0 auto 50px auto; /*márgenes exteriores. auto para que se centre en la página*/
+        padding: 20px; /*márgenes interiores*/
+        border-radius: 8px; /*esquinas redondeadas*/
+        font-size: 18px; /*tamaño de la fuente*/
+    }
+
+    .principal .container .contenedorTablaUsuarios #tablaUsuarios{
+        font-size: 16px; /*tamaño del texto*/
+        border-collapse: collapse; /*borde de la tabla colapsado (solo una línea)*/
+        border: 2px solid #aaa; /*añadimos un borde*/
+        width: 100%; /*ancho completo*/
+    }
+
+    .principal .container .contenedorTablaUsuarios #tablaUsuarios thead{
+        font-size: 18px; /*tamaño del texto*/
+    }
+    
+    .principal .container .contenedorTablaUsuarios #tablaUsuarios td{
+         padding: 7px 5px; /* márgenes internos*/
+    }
+    
+    .principal .container #btnArriba{
+        font-size: 17px; /*tamaño del texto*/
+    }
+    
+    .principal .container #btnArriba:hover{
+        box-shadow: 0 0 5px #16c7c7; /*le aplicamos una pequeña sombra en los bordes*/
+        background-image: linear-gradient(to top, white, white); /*añadimos un fondo con degradado lineal*/
+    }
+}

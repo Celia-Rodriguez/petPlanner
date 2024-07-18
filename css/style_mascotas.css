@@ -1,0 +1,376 @@
+/*************************************************************/
+/****************************** MAIN *************************/
+/*************************************************************/
+.principal .container{
+    max-width: 1200px; /*ancho máximo para que no se haga demasiado grande*/
+    background-color: #a6e3eb; /*color del fondo*/
+    margin: 0 auto; /*margen auto a los lados para centrarlo*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    box-shadow: 0 0 5px #1eadc0; /*sombra para dar sensación de elevación*/
+}
+
+.principal .container #btnVolver{
+    padding: 3px 10px 5px 10px; /*márgenes interiores*/
+    background: linear-gradient(white, #83dce7); /*fondo del botón con degradado lineal*/
+    border-radius: 5px; /*esquinas redondeadas*/
+    border: 2px solid #1eadc0; /*borde del botón*/
+    cursor: pointer; /*cambiamos como se ve el puntero cuando pasa por encima*/
+    /* flex-basis: 1; */
+    text-align: center; /*alineamos el texto al centro*/
+    font-size: 22px; /*tamaño del texto*/
+    color: #009999; /*color del texto*/
+}
+
+.principal .container #btnVolver:hover{
+    box-shadow: 0 0 5px #16c7c7; /*sombra para dar sensación de elevación*/
+    background-image: linear-gradient(to top, white, white); /*color de fondo blanco*/
+}
+
+.principal .container h3{
+    text-align: center; /*alineamos el texto al centro*/
+    margin: auto;/*margen auto para que se centre*/
+}
+
+.principal .container .titulo{
+    margin: 150px auto 25px auto; /*márgenes exteriores. auto para que se centre en la página*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    align-items: center; /*elementos centrados sobre el eje transversal*/
+    width: 60%; /*ancho*/
+    font-family: "Geranium"; /*fuente del texto*/
+    font-size: 30px; /*tamaño del texto*/
+    letter-spacing: 0.1em; /*espacio entre caracteres para facilitar la lectura*/
+}
+
+.principal .container h4{
+    width: 60%; /*ancho*/
+    margin: 10px auto 15px auto; /*márgenes exteriores. auto para que se centre en la página*/
+    font-family: "Geranium"; /*tipografía del texto*/
+    font-size: 24px; /*tamaño del texto*/
+    letter-spacing: 0.1em; /*espacio entre caracteres para facilitar la lectura*/
+}
+
+.principal .container .labelForm{
+    font-size: 20px; /*tamaño del texto*/
+}
+
+.principal .container .cajaTexto{
+    margin-bottom: 20px; /*margen superior para separar de los siguientes elementos*/
+    padding: 7px; /*añadimos márgenes internos para separar de los bordes*/
+    font-size: 20px; /*tamaño del texto*/
+    border-radius: 3px; /*esquinas redondeadas*/
+}
+.principal .container .borderCajaTexto{
+    border: 2px solid #aaa; /*añadimos un borde*/
+}
+
+.principal .container .error{
+    border: 2px solid red; /*añadimos un borde*/
+}
+
+.principal .container .contenedorCodigoMascota{
+    width: 60%; /*ancho del elemento*/
+    min-width: 500px; /*ancho mínimo*/
+    margin: 0 auto 40px auto; /*márgenes exteriores. auto para que se centre en la página*/
+    background-color: white; /*color de fondo*/
+    padding: 20px 30px; /*márgenes interiores*/
+    border-radius: 20px; /*esquinas redondeadas*/
+    /* border-top-left-radius: 0px; */
+    box-shadow: 0 0 5px #1eadc0; /*sombra para dar sensación de elevación*/
+}
+
+.principal .container #petCodeContainer{
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    margin-left: 20px; /*añadimos espacio a la izquierda*/
+}
+
+.principal .container .contenedorCodigoMascota #formularioAltaCodigoMascota .codigoFormContainer{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    justify-content: space-between; /*colocamos dejando espacio entre los elementos*/
+    align-items: center; /*alineamos al centro en la vertical*/
+    width: 100%; /*ancho completo*/
+}
+
+.principal .container .contenedorCodigoMascota .cajaTexto{
+    margin-bottom: 0; /*margen inferior*/
+    margin-top: 0 !important; /*margen superior*/
+    width: 100%; /*ancho completo*/
+}
+
+.principal .container .contenedorCodigoMascota #errorPetCode{
+    background-color: rgba(255,0,0,0.2); /*color del fondo*/
+    padding: 7px 5px; /*márgenes interiores*/  
+    border-radius: 3px; /*esquinas redondeadas*/
+    display: none; /*no mostramos hasta que sea necesario*/
+}
+
+.principal .container .contenedorCodigoMascota #formularioAltaCodigoMascota button{
+    cursor: pointer; /*cambiamos como se ve el puntero cuando pasa por encima*/
+    margin: 10px 10px; /*márgenes exteriores.*/
+    padding: 7px; /*márgenes interiores*/
+    font-size: 20px; /*tamaño del texto*/
+    width: 20%; /*ancho completo*/
+    background-color: #66dae9; /*color del fondo*/
+    border: 2px solid #3ab8c9; /*borde del botón*/
+    border-radius: 5px; /*esquinas redondeadas*/
+    min-width: 120px; /*ancho mínimo*/
+}
+
+.principal .container .contenedorFormMascota{
+    width: 60%; /*ancho*/
+    min-width: 500px; /*ancho mínimo*/
+    margin: 0 auto 70px auto; /*márgenes exteriores.*/
+    background-color: white; /*color del fondo*/
+    padding: 30px; /*márgenes interiores*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    justify-content: space-between; /*dejamos espacio entre los elementos*/
+    border-radius: 20px; /*esquinas redondeadas*/
+    /* border-top-left-radius: 0px; */
+    box-shadow: 0 0 5px #1eadc0; /*sombra para dar sensación de elevación*/
+
+}
+
+.principal .container .contenedorFormMascota .panelIzquierdo{
+    width: 35%; /*ancho*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    align-items: center; /*elementos centrados sobre el eje transversal*/
+}
+
+.principal .container .contenedorFormMascota .panelIzquierdo #subirImg{
+    cursor: pointer; /*cambiamos como se ve el puntero cuando pasa por encima*/
+    margin: 10px 10px; /*márgenes exteriores*/
+    padding: 5px 10px; /*márgenes interiores*/
+    font-size: 16px !important; /*tamaño del texto*/
+    background-color: #66dae9; /*color del fondo*/
+    border: 2px solid #3ab8c9; /*borde del botón*/
+    border-radius: 5px; /*esquinas redondeadas*/
+    font-size: 15px; /*esquinas redondeadas*/
+}
+
+.principal .container .contenedorFormMascota .panelIzquierdo .contenedorImagenMascota{
+    width: 100%; /*ancho*/
+    height: 37%; /*altura*/
+    background-color: #ddd; /*color del fondo*/
+    border-radius: 10px; /*esquinas redondeadas*/
+    border: 3px solid #1eadc0; /*borde*/
+    border-radius: 50%; /*esquinas redondeadas*/
+    padding: 1px; /*márgenes interiores*/
+}
+
+.principal .container .contenedorFormMascota .panelIzquierdo .contenedorImagenMascota img{
+    width: 100%; /*ancho*/
+    height: 100%; /*altura*/
+    object-fit: cover; /*se redimensiona la imagen para mantener su proporción*/
+    border-radius: 50%; /*esquinas redondeadas para dar forma circular*/
+}
+
+.principal .container .contenedorFormMascota #formularioAltaMascota{
+    width: 60%; /*ancho*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+}
+
+.principal .container .contenedorFormMascota #formularioAltaMascota .contenedorCheckBox{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+}
+
+.principal .container .contenedorFormMascota #formularioAltaMascota .contenedorCheckBox div{
+    margin-right: 15px; /*añadimos espacio a la derecha*/
+    margin-bottom: 10px; /*añadimos espacio debajo*/
+    display: flex; /*contenedor flexible*/
+    align-items: center; /*alineamos transversalmente en el centro*/
+}
+
+.principal .container .contenedorFormMascota #formularioAltaMascota .generoMascota p, .principal .container .contenedorFormMascota #formularioAltaMascota .chipMascota p{
+    margin-bottom: 10px; /*añadimos espacio debajo*/
+}
+
+.principal .container .contenedorFormMascota #formularioAltaMascota .contenedorCheckBox div input{
+    margin-right: 5px; /*añadimos espacio a la derecha*/
+    width: 20px; /*ancho*/
+    height: 20px; /*altura*/
+}
+
+.principal .container .contenedorFormMascota #formularioAltaMascota #errorPetName, .principal .container .contenedorFormMascota #formularioAltaMascota #errorPetDate, .principal .container .contenedorFormMascota #formularioAltaMascota #errorPetType, .principal .container .contenedorFormMascota #formularioAltaMascota #errorPetBreed, .principal .container .contenedorFormMascota #formularioAltaMascota #errorPetWeight{
+    margin-bottom: 10px; /*margen inferior para separar del siguiente elemento*/
+    background-color: rgba(255,0,0,0.2); /*color del fondo*/
+    padding: 7px 5px; /*márgenes interiores*/  
+    border-radius: 3px; /*esquinas redondeadas*/
+    display: none; /*no mostramos hasta que sea necesario*/
+    margin-top: -20px; /*margen superior negativo para pegarlo al elemento superior*/
+}
+
+.principal .container .contenedorFormMascota #formularioAltaMascota #errorPetGender, .principal .container .contenedorFormMascota #formularioAltaMascota #errorChip{
+    margin-bottom: 10px; /*margen inferior para separar del siguiente elemento*/
+    background-color: rgba(255,0,0,0.2); /*color del fondo*/
+    padding: 7px 5px; /*márgenes interiores*/  
+    border-radius: 3px; /*esquinas redondeadas*/
+    display: none; /*no mostramos hasta que sea necesario*/
+}
+
+.principal .container .contenedorFormMascota #formularioAltaMascota .botonesNuevaMascota{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    width: 100%; /*ancho*/
+    justify-content: flex-end; /*dejamos espacio entre los elementos*/
+}
+
+.principal .container .contenedorFormMascota #formularioAltaMascota .botonesNuevaMascota button{
+    width: 30%; /*ancho*/
+    margin: 10px 0 10px 10px; /*márgenes exteriores*/
+    padding: 7px; /*márgenes internos*/
+    font-size: 20px; /*tamaño de la fuente*/
+    cursor: pointer; /*cursor al pasar por encima*/
+    background-color: #66dae9; /*color del fondo*/
+    border: 2px solid #3ab8c9; /*borde*/
+    border-radius: 5px; /*esquinas redondeadas*/
+    min-width: 129px;
+}
+
+#ui-id-1 {/*estilos autocomplete*/
+    max-height: 250px !important; /*altura máxima*/
+    overflow: scroll; /*scroll*/
+}
+
+/************************** FIN MAIN *************************/
+
+/*************************************************************/
+/******************* ESTILOS MEDIA QUERY *********************/
+/*************************************************************/
+@media screen and (max-width: 768px){
+    .principal .container{
+        width: 100%; /*ancho del elemento*/
+        max-width: 700px; /*ancho máximo para que no se haga demasiado grande*/
+        min-width: 425px; /*ancho mínimo*/
+    }
+
+    .principal .container #btnVolver{
+        padding: 1px 6px 1px 6px; /*márgenes interiores*/
+        border-radius: 5px; /*esquinas redondeadas*/
+        font-size: 18px; /*tamaño del texto*/
+    }
+
+    .principal .container .titulo{
+        margin: 100px auto 20px auto; /*márgenes exteriores. auto para que se centre en la página*/
+        max-width: 560px; /*ancho máximo para que no se haga demasiado grande*/
+        padding-left: 2%; /*añadimos margen a la izquierda para separar del borde*/
+        padding-right: 10%; /*añadimos margen a la derecha para separar del borde*/
+        font-size: 27px; /*tamaño del texto*/
+        width: 100%; /*ancho completo*/
+    }
+
+    .principal .container h4{
+        width: 100%; /*ancho completo*/
+        max-width: 560px; /*ancho máximo para que no se haga demasiado grande*/
+        margin: 10px auto 5px auto; /*márgenes exteriores. auto para que se centre en la página*/
+        padding-left: 2%; /*añadimos margen a la izquierda para separar del borde*/
+        font-family: "Geranium"; /*tipografía del texto*/
+    }
+
+    .principal .container .labelForm{
+        font-size: 18px; /*tamaño del texto*/
+    }
+
+    .principal .container .cajaTexto{
+        font-size: 18px; /*tamaño del texto*/
+        width: 100%; /*ancho completo*/
+    }
+
+    .principal .container .contenedorCodigoMascota{
+        width: 100%; /*ancho completo*/
+        max-width: 550px; /*ancho máximo para que no se haga demasiado grande*/
+        min-width: 425px; /*ancho mínimo*/
+        margin: 0 auto 35px auto; /*márgenes exteriores. auto para que se centre en la página*/
+        padding: 10px 20px; /*márgenes interiores*/
+        border-radius: 8px; /*esquinas redondeadas*/
+        font-size: 18px;
+    }
+  
+    .principal .container #petCodeContainer{
+        width: 100%; /*ancho completo*/
+        margin: 0 2%; /*añadimos espacio a la izquierda*/
+    }
+    
+    .principal .container .contenedorCodigoMascota .cajaTexto{
+        margin-top: 20px; /*margen superior*/
+        width: 100%; /*ancho completo*/
+    }
+    
+    .principal .container .contenedorCodigoMascota #errorPetCode{
+        font-size: 18px; /*tamaño del texto*/
+    }
+    
+    .principal .container .contenedorCodigoMascota #formularioAltaCodigoMascota button{
+        font-size: 18px; /*tamaño del texto*/
+        min-width: 90px; /*ancho mínimo*/
+    }
+    
+    .principal .container .contenedorFormMascota{
+        width: 100%; /*ancho*/
+        max-width: 550px; /*ancho máximo para que no se haga demasiado grande*/
+        min-width: 425px; /*ancho mínimo*/
+        margin: 0 auto 70px auto; /*márgenes exteriores.*/
+        flex-direction: column; /*elementos interiores colocados en columna*/
+        justify-content: space-between; /*dejamos espacio entre los elementos*/
+        border-radius: 8px; /*esquinas redondeadas*/
+    
+    }
+    
+    .principal .container .contenedorFormMascota .panelIzquierdo{
+        width: 60%; /*ancho del elemento*/
+        height: 50%; /*altura del elemento*/
+        margin: 0 auto; /*añadimos margen a la derecha*/
+        max-width: 275px; /*ancho máximo*/
+    }
+    
+    .principal .container .contenedorFormMascota .panelIzquierdo .contenedorImagenMascota{
+        width: 95%; /*ancho*/
+        height: 100%; /*altura*/
+        min-height: 230px; /*altura mínima*/
+        padding: 3.5px 3.5px 0px 3.5px; /*márgenes internos*/
+    }
+
+    .principal .container .contenedorFormMascota .panelIzquierdo .contenedorImagenMascota img{
+        width: 100%; /*ancho*/
+        height: 50%; /*altura*/
+        min-height: 220px; /*altura mínima*/
+        max-height: 250px; /*altura máxima*/
+    }
+    
+    .principal .container .contenedorFormMascota #formularioAltaMascota{
+        width: 100%; /*ancho*/
+    }
+    
+    .principal .container .contenedorFormMascota #formularioAltaMascota .generoMascota,
+    .principal .container .contenedorFormMascota #formularioAltaMascota .chipMascota{
+        display: flex; /*contenedor flexible*/
+        flex-direction: row; /*elementos interiores colocados en línea*/
+    }
+
+    .principal .container .contenedorFormMascota #formularioAltaMascota .contenedorCheckBox{
+        margin-left: 15px;  /*añadimos espacio a la izquierda*/
+    }
+    
+    .principal .container .contenedorFormMascota #formularioAltaMascota #errorPetName, .principal .container .contenedorFormMascota #formularioAltaMascota #errorPetDate, .principal .container .contenedorFormMascota #formularioAltaMascota #errorPetType, .principal .container .contenedorFormMascota #formularioAltaMascota #errorPetBreed, .principal .container .contenedorFormMascota #formularioAltaMascota #errorPetWeight{
+        font-size: 18px; /*tamaño de la fuente*/
+    }
+    
+    .principal .container .contenedorFormMascota #formularioAltaMascota #errorPetGender, .principal .container .contenedorFormMascota #formularioAltaMascota #errorChip{
+        font-size: 18px; /*tamaño de la fuente*/
+    }
+
+    
+    .principal .container .contenedorFormMascota #formularioAltaMascota .botonesNuevaMascota button{
+        width: 25%; /*ancho*/
+        font-size: 18px; /*tamaño del texto*/
+        margin: 0;
+    }
+
+
+}

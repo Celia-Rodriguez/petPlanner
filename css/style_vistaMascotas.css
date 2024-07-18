@@ -1,0 +1,393 @@
+/*************************************************************/
+/****************************** MAIN *************************/
+/*************************************************************/
+.principal .container{
+    max-width: 1200px; /*ancho máximo para que no se haga demasiado grande*/
+    background-color: #a6e3eb; /*color del fondo*/
+    margin: 0 auto; /*margen auto a los lados para centrarlo*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    box-shadow: 0 0 5px #1eadc0; /*sombra para dar sensación de elevación*/
+}
+
+.principal .container .titulo{
+    margin: 150px auto 25px auto; /*márgenes exteriores. auto para que se centre en la página*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    align-items: center; /*elementos centrados sobre el eje transversal*/
+    width: 60%; /*ancho*/
+    font-family: "Geranium"; /*fuente del texto*/
+    font-size: 30px; /*tamaño del texto*/
+    letter-spacing: 0.1em; /*espacio entre caracteres para facilitar la lectura*/
+}
+
+.principal .container #btnVolver{
+    padding: 3px 10px 5px 10px; /*márgenes interiores*/
+    background: linear-gradient(white, #83dce7); /*fondo del botón con degradado lineal*/
+    border-radius: 5px; /*esquinas redondeadas*/
+    border: 2px solid #1eadc0; /*borde del botón*/
+    cursor: pointer; /*cambiamos como se ve el puntero cuando pasa por encima*/
+    /* flex-basis: 1; */
+    text-align: center; /*alineamos el texto al centro*/
+    font-size: 22px; /*tamaño del texto*/
+    color: #009999; /*color del texto*/
+}
+
+.principal .container #btnVolver:hover{
+    box-shadow: 0 0 5px #16c7c7; /*sombra para dar sensación de elevación*/
+    background-image: linear-gradient(to top, white, white); /*color de fondo blanco*/
+}
+
+/* .principal .container #btnVolver:hover{
+    text-shadow: 0 0 5px white;
+    transform: scale(1.2);
+} */
+
+.principal .container h3{
+    text-align: center; /*alineamos el texto al centro*/
+    margin: auto;/*margen auto para que se centre*/
+}
+
+.principal .container .contenedorMascotas .tabList{
+    display: grid; /*contenedor con cuadrícula*/
+    grid-template-columns: auto auto auto auto auto; /*columnas de la cuadrícula*/
+    gap: 5px; /*espacio entre los elementos interiores (canales)*/
+    width: 60%;  /*ancho*/
+    margin: 0 auto 20px auto;/*margen. Auto para que se centre*/
+}
+
+.principal .container .contenedorMascotas .tabList #btnAddMascota{
+    padding: 10px 0; /*márgenes interiores*/
+    background: linear-gradient(white, #83dce7); /*fondo del botón con degradado*/
+    border-radius: 5px; /*esquinas redondeadas*/
+    list-style: none; /*eliminamos las viñetas de la lista*/
+    border: 2px solid #1eadc0; /*borde del botón*/
+    cursor: pointer; /*cambiamos como se ve el puntero cuando pasa por encima*/
+    /* flex-basis: 1; */
+    text-align: center; /*alineamos el texto al centro*/
+}
+.principal .container .contenedorMascotas .tabList #btnAddMascota:hover{
+    box-shadow: 0 0 5px #16c7c7; /*sombra para dar sensación de elevación*/
+    background-image: linear-gradient(to top, white, white); /*color de fondo blanco*/
+}
+
+.principal .container .contenedorMascotas .tabList .tabItem{
+    padding: 10px 0; /*márgenes interiores*/
+    background-color: #3db7c7; /*color de fondo*/
+    border-radius: 5px; /*esquinas redondeadas*/
+    list-style: none; /*eliminamos las viñetas de la lista*/
+    border: 2px solid #1eadc0; /*borde del botón*/
+    cursor: pointer; /*cambiamos como se ve el puntero cuando pasa por encima*/
+    /* flex-basis: 1; */
+    text-align: center; /*alineamos el texto al centro*/
+}
+
+.active{
+    background-color: white !important; /*color de fondo blanco*/
+    box-shadow: 0 0 3px #1eadc0; /*sombra para dar sensación de elevación*/
+}
+
+.principal .container .sinMascota{
+    padding: 100px 0 !important; /*márgenes interiores*/
+    text-align: center; /*alineamos el texto al centro*/
+}
+
+.principal .container .contenedorFichaMascota{
+    width: 60%; /*ancho del elemento*/
+    min-width: 500px; /*ancho mínimo*/
+    margin: 0 auto 70px auto; /*márgenes exteriores. auto para que se centre en la página*/
+    background-color: white; /*color de fondo*/
+    padding: 30px 30px 10px 30px; /*márgenes interiores*/
+    border-radius: 20px; /*esquinas redondeadas*/
+    /* border-top-left-radius: 0px; */
+    box-shadow: 0 0 5px #1eadc0; /*sombra para dar sensación de elevación*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota{
+    margin-bottom: 20px; /*margen inferior para dar separación*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .botonesMascota{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    width: 100%; /*ancho completo*/
+    justify-content: flex-end; /*elementos interiores colocados a la derecha*/
+    margin-bottom: 20px; /*margen inferior para dar separación*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .botonesMascota #btnGuardar,
+.principal .container .contenedorFichaMascota .fichaMascota .botonesMascota #btnEditarMascota{
+    cursor: pointer; /*cambiamos como se ve el puntero cuando pasa por encima*/
+    margin: 10px 10px; /*márgenes exteriores.*/
+    padding: 7px; /*márgenes interiores*/
+    font-size: 20px; /*tamaño del texto*/
+    width: 100px; /*ancho*/
+    background-color: #66dae9; /*color del fondo*/
+    border: 2px solid #3ab8c9; /*borde del botón*/
+    border-radius: 5px; /*esquinas redondeadas*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .botonesMascota #btnGuardar:hover,
+.principal .container .contenedorFichaMascota .fichaMascota .botonesMascota #btnEditarMascota:hover{
+    background-color: white; /*color del fondo*/
+    color: teal; /*color del texto*/
+    border: 2px solid #229faf; /*borde del botón*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .botonesMascota #btnEliminarMascota,
+.principal .container .contenedorFichaMascota .fichaMascota .botonesMascota #btnCancelarMascota{
+    cursor: pointer; /*cambiamos como se ve el puntero cuando pasa por encima*/
+    margin: 10px 5px; /*márgenes exteriores*/
+    padding: 7px; /*márgenes interiores*/
+    font-size: 20px; /*tamaño del texto*/
+    width: 100px; /*ancho*/
+    background-color: rgba(255, 0, 0,0.4); /*color del fondo*/
+    border: 2px solid rgba(231, 81, 81,0.7); /*borde del botón*/
+    border-radius: 5px; /*esquinas redondeadas*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .botonesMascota #btnEliminarMascota:hover,
+.principal .container .contenedorFichaMascota .fichaMascota .botonesMascota #btnCancelarMascota:hover{
+    background-color: white; /*color del fondo*/
+    color: #9b0000; /*color del texto*/
+    border: 2px solid #b41f1f; /*borde del botón*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelIzquierdo{
+    width: 35%; /*ancho del elemento*/
+    margin-right: 5px; /*añadimos margen a la derecha*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    align-items: center; /*elementos centrados sobre el eje transversal*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelIzquierdo .subirImg{
+    cursor: pointer; /*cambiamos como se ve el puntero cuando pasa por encima*/
+    margin: 10px 10px; /*márgenes exteriores*/
+    padding: 5px 10px; /*márgenes interiores*/
+    font-size: 16px !important; /*tamaño del texto*/
+    background-color: #66dae9; /*color del fondo*/
+    border: 2px solid #3ab8c9; /*borde del botón*/
+    border-radius: 5px; /*esquinas redondeadas*/
+    font-size: 15px; /*esquinas redondeadas*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelIzquierdo .subirImg:hover{
+    background-color: white; /*color del fondo*/
+    color: rgb(4, 97, 97); /*color del texto*/
+    border: 2px solid #229faf; /*borde del botón*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelIzquierdo .contenedorImagenMascota{
+    width: 100%; /*ancho*/
+    height: 37%; /*altura*/
+    background-color: #ddd; /*color del fondo*/
+    border-radius: 10px; /*esquinas redondeadas*/
+    border: 3px solid #1eadc0; /*borde*/
+    border-radius: 50%; /*esquinas redondeadas*/
+    padding: 1px; /*márgenes interiores*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelIzquierdo .contenedorImagenMascota img{
+    width: 100%; /*ancho*/
+    height: 100%; /*altura*/
+    object-fit: cover; /*se redimensiona la imagen para mantener su proporción*/
+    border-radius: 50%; /*esquinas redondeadas para dar forma circular*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho{
+    width: 60%; /*ancho*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column; /*elementos interiores colocados en columna*/
+    margin-left: 20px; /*margen a la izquierda para dar espacio*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho .contenedorCheckBox{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row; /*elementos interiores colocados en línea*/
+    margin-bottom: 10px; /*margen inferior para separar del siguiente elemento*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho .contenedorCheckBox div{
+    margin-right: 15px; /*margen a la derecha para dar espacio*/
+    margin-bottom: 10px; /*margen inferior para separar del siguiente elemento*/
+    display: flex; /*contenedor flexible*/
+    align-items: center; /*alineación vertical al centro*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho .generoMascota p, 
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho .chipMascota p{
+    margin-bottom: 5px; /*margen inferior para separar del siguiente elemento*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho .contenedorCheckBox div input{
+    margin-right: 5px; /*margen a la derecha para dar espacio*/
+    width: 20px; /*ancho*/
+    height: 20px; /*altura*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho .cajaTexto{
+    margin-bottom: 20px; /*margen inferior para separar del siguiente elemento*/
+    padding: 7px; /*márgenes interiores*/  
+    font-size: 20px; /*tamaño del texto*/
+    border-radius: 3px; /*esquinas redondeadas*/
+}
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho .borderCajaTexto{
+    border: 2px solid #aaa; /*borde*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho .error{
+    border: 2px solid red; /*borde*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho #errorPetName, 
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho #errorPetDate, 
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho #errorPetType, 
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho #errorPetBreed, 
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho #errorPetWeight{
+    margin-bottom: 10px; /*margen inferior para separar del siguiente elemento*/
+    background-color: rgba(255,0,0,0.2); /*color del fondo*/
+    padding: 7px 5px; /*márgenes interiores*/  
+    border-radius: 3px; /*esquinas redondeadas*/
+    display: none; /*no mostramos hasta que sea necesario*/
+    margin-top: -20px; /*margen superior negativo para pegarlo al elemento superior*/
+}
+
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho #errorPetGender, 
+.principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho #errorChip{
+    margin-bottom: 10px; /*margen inferior para separar del siguiente elemento*/
+    background-color: rgba(255,0,0,0.2); /*color del fondo*/
+    padding: 7px 5px; /*márgenes interiores*/ 
+    border-radius: 3px; /*esquinas redondeadas*/
+    display: none; /*lo ocultamos hasta que sea necesario*/
+}
+
+#ui-id-1 {/*estilos autocomplete*/
+    max-height: 250px !important; /*altura máxima*/
+    overflow: scroll; /*scroll*/
+}
+
+
+/************************** FIN MAIN *************************/
+
+/*************************************************************/
+/******************* ESTILOS MEDIA QUERY *********************/
+/*************************************************************/
+@media screen and (max-width: 768px){
+    .principal{
+        min-width: 425px; /*ancho mínimo*/
+    }
+    .principal .container{
+        width: 100%; /*ancho del elemento*/
+        max-width: 700px; /*ancho máximo para que no se haga demasiado grande*/
+        /* min-width: 450px; ancho mínimo */
+        margin: 0 auto;
+    }
+
+    .principal .container #btnVolver{
+        padding: 1px 6px 1px 6px; /*márgenes interiores*/
+        border-radius: 5px; /*esquinas redondeadas*/
+        font-size: 18px; /*tamaño del texto*/
+    }
+
+    .principal .container .titulo{
+        margin: 100px auto 20px auto; /*márgenes exteriores. auto para que se centre en la página*/
+        max-width: 560px; /*ancho máximo para que no se haga demasiado grande*/
+        padding-left: 2%; /*añadimos margen a la izquierda para separar del borde*/
+        padding-right: 10%; /*añadimos margen a la derecha para separar del borde*/
+        font-size: 27px; /*tamaño del texto*/
+        width: 100%; /*ancho completo*/
+    }
+
+    .principal .container .contenedorMascotas{
+        width: 100%; /*ancho completo*/
+        max-width: 550px; /*ancho máximo para que no se haga demasiado grande*/
+        min-width: 425px; /*ancho mínimo*/
+        margin: 0 auto 50px auto; /*márgenes exteriores. auto para que se centre en la página*/
+        padding: 0; /*márgenes interiores*/
+        border-radius: 8px; /*esquinas redondeadas*/
+        font-size: 18px;/*tamaño letra*/
+    }
+
+    .principal .container .contenedorMascotas .tabList{
+        display: grid; /*contenedor con cuadrícula*/
+        grid-template-columns: auto auto auto auto; /*columnas de la cuadrícula*/
+        width: 100%;  /*ancho*/
+        padding: 5px; /*márgenes internos para separar*/
+        font-size: 17px; /*tamaño del texto*/
+    }
+
+    .principal .container .sinMascota{
+        padding: 70px 0 !important; /*márgenes interiores*/
+    }
+    
+    .principal .container .contenedorFichaMascota{
+        width: 100%; /*ancho del elemento*/
+        min-width: 425px; /*ancho mínimo*/
+        margin: 0 auto 40px auto; /*márgenes exteriores. auto para que se centre en la página*/
+        padding: 20px 20px 0 20px; /*márgenes interiores*/
+        border-radius: 15px; /*esquinas redondeadas*/
+    }
+  
+    .principal .container .contenedorFichaMascota .fichaMascota .botonesMascota{
+        justify-content: flex-end; /*elementos interiores colocados a la derecha*/
+        margin-bottom: 15px; /*margen inferior para dar separación*/
+    }
+    
+    .principal .container .contenedorFichaMascota .fichaMascota .botonesMascota #btnGuardar,
+    .principal .container .contenedorFichaMascota .fichaMascota .botonesMascota #btnEditarMascota{
+        padding: 5px; /*márgenes interiores*/
+        font-size: 18px; /*tamaño del texto*/
+    }
+    
+    .principal .container .contenedorFichaMascota .fichaMascota .botonesMascota #btnEliminarMascota,
+    .principal .container .contenedorFichaMascota .fichaMascota .botonesMascota #btnCancelarMascota{
+        padding: 5px; /*márgenes interiores*/
+        font-size: 18px; /*tamaño del texto*/
+    }
+
+    .principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota{
+        display: flex; /*contenedor flexible*/
+        flex-direction: column; /*elementos interiores colocados en línea*/
+    }
+    
+    .principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelIzquierdo{
+        width: 60%; /*ancho del elemento*/
+        height: 50%; /*altura del elemento*/
+        margin: 0 auto; /*añadimos margen a la derecha*/
+        max-width: 275px; /*ancho máximo*/
+    }
+
+    .principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelIzquierdo .contenedorImagenMascota{
+        width: 100%; /*ancho*/
+        height: 100%; /*altura*/
+        padding: 3.5px 3.5px 0px 3.5px; /*márgenes internos*/
+    }
+    
+    .principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelIzquierdo .contenedorImagenMascota img{
+        width: 100%; /*ancho*/
+        height: 50%; /*altura*/
+        min-height: 220px; /*altura mínima*/
+        max-height: 250px; /*altura máxima*/
+    }
+    
+    .principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho{
+        width: 100%; /*ancho*/
+        margin-left: 0; /*margen a la izquierda para dar espacio*/
+        padding: 6%; /*márgenes internos*/
+    }
+    
+    .principal .container .contenedorFichaMascota .fichaMascota .contenidoFichaMascota .panelDerecho .cajaTexto{
+        font-size: 18px; /*tamaño del texto*/
+    }
+
+    #petDate{
+        width: 100% !important; /*ancho completo del input date porque en el móvil va por libre*/
+    }
+
+}

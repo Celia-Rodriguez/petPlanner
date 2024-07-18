@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración</title>
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
+    <!-- estilos -->
+    <link rel="stylesheet" href="../css/style_global.css">
+    <link rel="stylesheet" href="../css/style_admin.css">
+    <link rel="stylesheet" href="../src/lib/jquery-ui/jquery-ui.min.css">
+    <!-- jquery -->
+    <script src="../js/lib/jquery-3.7.1.js"></script>
+    <script src="../src/lib/jquery-ui/jquery-ui.min.js"></script>
+    <!-- javascript -->
+    <script src="../js/user_admin.js" defer></script>
+    <script src="../js/validaciones.js" defer></script>
+    <script src="../js/script_global.js" defer></script>
+    <!-- JavaScript de Sweetalert -->
+    <script src="../src/lib/sweetalert/sweetalert2@11.js"></script>
+
+
+</head>
+<body>
+    <!--------------- cabecera ----------------->
+    <header class="cabecera">
+        <a href="principal.html" class="contenedorLogo">
+            <img src="../img/Logo_texto.png" alt="" class="imgLogo">
+        </a>
+        <nav class="mainMenu">
+            <button id="btnMenu" class="btnMainMenu">
+                &#8801;
+            </button>
+            <ul class="navLinks">
+                <li class="navItem"><a href="principal.html">Inicio</a></li>
+                <li class="navItem"><a href="vistaMascotas.html">Mascotas</a> </li> 
+                <li class="navItem"><a href="calendar.html">Calendario</a> </li> 
+                <li class="navItem"><a href="#" class="menuUser">Usuario</a> 
+                    <ul class="userMenuItems"><!-- MENU USUARIO -->
+                        <li class="userItem"><a href="usuario.html">Configuración</a></li>
+                        <li class="userItem" id="adminUsuarios"><a href="admin_usuarios.html">Administración</a></li>
+                        <li class="userItem"><a href="../php/sessionDestroy.php">Cerrar Sesión</a></li>
+                    </ul>
+                </li> <!-- Esta clase está vacía es solo para llamar al menú -->
+            </ul>
+        </nav>
+    </header>
+    <!---------------- cuerpo ----------------->
+    <main class="principal">
+        <div class="container">
+            <div class="titulo">
+                <button type="button" id="btnVolver">&#10094;&#10094;</button>
+                <h3>Administración de usuarios</h3>
+            </div>
+            <div class="contenedorTablaUsuarios" id="listadoUsuarios">
+                <div class="containerTextInput">
+                    <div class="iconoInfo" title="Puedes buscar al usuario por su nombre o su email">i</div> 
+                    <input type="text" class="cajaTexto" id="inputBuscador" placeholder="Buscar en la tabla...">
+                </div>
+                <table id="tablaUsuarios">
+                    <thead>
+                        <tr>
+                            <th>usuario</th>
+                            <th>Email</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- aquí va la tabla de usuarios -->
+                    </tbody>
+                </table>
+                <button  id="btnArriba" onclick="subir()">&#129153;</button>
+            </div>
+        </div>
+    </main>
+
+    <!---------------- footer ----------------->
+    <footer class="pie">
+        <div class="pieContenedor">
+            <div class="pieLogos">
+                <a href="index.html"> 
+                    <img src="../img/Logo_texto.png" alt="" class="pielogo">
+                </a>
+                <div class="rrss">
+                    <a onclick="proximamente()"><img src="../img/logos/facebook_icon.png" alt="Icono facebook"></a>
+                    <a onclick="proximamente()"><img src="../img/logos/x_icon.png" alt="Icono X"></a>
+                    <a onclick="proximamente()"><img src="../img/logos/instagram_icon.png" alt="Icono instagram"></a>
+                    <a onclick="proximamente()"><img src="../img/logos/youtube_icon.png" alt="Icono Youtube"></a>
+                </div>
+            </div>
+            <div class="pieLogosDos">
+                <div class="pieLinks">
+                    <a onclick="proximamente()">FAQS</a>
+                    <a onclick="proximamente()">Sobre PetPlanner</a>        
+                    <a onclick="proximamente()">Soporte</a>
+                    <a onclick="proximamente()">Contacto</a>
+                </div>
+                <div class="pieLinks"> 
+                     <p>created by <a href="https://github.com/PatriciaCBweb" target="_blank">Patricia</a> & <a href="https://github.com/Celia-Rodriguez" target="_blank">Celia</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

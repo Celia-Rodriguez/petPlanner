@@ -1,0 +1,263 @@
+/*************************************************************/
+/********************* ESTILOS GENERALES *********************/
+/*************************************************************/
+.principal{
+    max-width: 1400px;/*ancho máximo*/
+    margin: 0 auto;/*margen exterior. auto a los lados para centrar el elemento en pantalla*/
+    padding: 130px 0 40px 0;/*márgenes interiores para dar espacio alrededor*/
+    display: flex; /*contenedor flexible*/
+    justify-content: center; /*elementos centrados longitudinalmente*/
+    align-items: center; /*elementos centrados transversalmente*/
+    min-height: 100%; /*ancho mínimo*/
+}
+.principal .contenedor{
+    width: 100%;/*ancho*/
+    margin: auto; /*márgenes externos auto*/
+    background-color: white; /*color del fondo*/
+    padding: 90px 0px 30px 0px; /*márgenes interiores*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column;/*distribución de los elementos en columna*/
+    align-items: center; /*elementos centrados transversalmente*/
+    border-radius: 10px; /*esquinas redondeadas*/
+    box-shadow: 0 0 5px #53dbed; /*sombra para dar aspecto de elevación*/
+}
+.line{
+    width: 100%;/*ancho*/
+    height: 200px;/*alto*/
+    margin-top: 70px; /*márgenes externos auto*/
+    background-image: linear-gradient(to bottom, #baeaf0, white);/*degradado del fondo*/
+}
+/*************************************************************/
+/********************* INFO TEXT *********************/
+/*************************************************************/
+.principal .contenedor .infoText{
+    width: 40%;/*ancho*/
+    padding: 20px;/*márgenes internos*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column;/*distribución de los elementos en columna*/
+    justify-content: center; /*elementos centrados longitudinalmente*/
+    align-items: center; /*elementos centrados transversalmente*/
+    text-align: center;/*texto centrado*/
+}
+.principal .contenedor .infoText h1{
+    margin-bottom: 20px;/*margen exterior inferior*/
+    letter-spacing: 2px;/*Tamaño entre letras*/
+    font-family: "Geranium"; /*fuente de la letra*/
+    font-size: 50px;/*Tamaño letras*/
+    line-height: 65px;/*espacio entre líneas de texto*/
+}
+
+.principal .contenedor .infoText h2{
+    font-family: Arial, Helvetica, sans-serif; /*fuente de la letra*/
+   font-size: 20px;/*Tamaño letras*/
+   font-weight: 100;/*grosor de las letras*/
+   letter-spacing: 1px;/*Tamaño entre letras*/
+   line-height: 35px;/*espacio entre líneas de texto*/
+}
+.principal .contenedor .infoText img{
+    height: 120px;/*Tamaño imagen*/
+}
+.principal .contenedor .infoText .blueButton{
+    text-decoration: none;/*decoracion del texto*/
+    margin: 30px 0px;/*margen exterior*/
+    cursor: pointer;/*cursor en forma de manita*/
+    font-size: 20px;/*Tamaño letras*/
+    font-family: Arial, Helvetica, sans-serif;/*fuente de la letra*/
+    border-radius: 10px;/*borde del elemento*/
+    text-align: center;/*texto centrado*/
+    width: 330px;/*ancho*/
+    padding: 15px;/*margenes internos*/
+    color: black;/*color letras*/
+    background-color: #66dae9; /*color de fondo*/
+    border: 2px solid #3ab8c9; /*color del borde*/
+    box-shadow: 0 0 5px white;/*sombra del elemento*/
+    font-weight: bold;/*grosor de las letras*/
+}
+.principal .contenedor .infoText .blueButton:hover{
+    box-shadow: 0 0 5px #16c7c7;/*sombra del elemento*/
+    background-image: linear-gradient(to top, white, white);/*degradado del fondo*/
+}
+.principal .contenedor .infoText .link{
+    cursor: pointer;/*cursor en forma de manita*/
+    font-size: 20px;/*Tamaño letras*/
+    color: #006c6c;/*color letras*/
+}
+/*************************************************************/
+/********************* INFO IMG *********************/
+/*************************************************************/
+.principal .contenedor .infoImg{
+    width: 70%;/*ancho*/
+    padding: 20px;/*márgenes internos*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column;/*distribución de los elementos en columna*/
+    justify-content: center; /*elementos centrados longitudinalmente*/
+    align-items: center; /*elementos centrados transversalmente*/
+    text-align: center;/*texto centrado*/
+}
+.principal .contenedor .infoImg .imgScreen{
+    height: 500px;/*Tamaño imagen*/
+}
+/*************************************************************/
+/********************* INFO APP*********************/
+/*************************************************************/
+.principal .contenedor .infoApp{
+    width: 60%;/*ancho*/
+    padding: 20px;/*márgenes internos*/
+    display: flex; /*contenedor flexible*/
+    justify-content: space-around; /*elementos centrados longitudinalmente*/
+    align-items: center; /*elementos centrados transversalmente*/
+    gap: 10px;/*espacio entre los elementos*/
+}
+.principal .contenedor .infoApp .appDescription{
+    width:300px;/*ancho*/
+}
+.principal .contenedor .infoApp .appDescription h2{
+    font-family: "Geranium"; /*fuente de la letra*/
+    font-size: 35px;/*Tamaño letras*/
+    color: #009999;/*color letras*/
+    margin-bottom: 10px;/*margen exterior superior*/
+    border-bottom: 1px solid #1eadc0;/*borde del elemento*/
+    padding: 20px 20px 5px  20px;/*márgenes internos*/
+}
+.principal .contenedor .infoApp .appDescription p{
+    font-size: 18px;/*Tamaño letras*/
+    line-height: 28px;/*espacio entre líneas de texto*/
+    font-weight: 200;/*grosor de las letras*/
+}
+/*************************************************************/
+/********************* NOTICIAS *********************/
+/*************************************************************/
+.principal .contenedor .nuevasMejoras{
+    width: 80%;/*ancho*/
+    padding: 20px;/*márgenes internos*/
+    margin-top: -20px;/*margen exterior superior*/
+    display: flex; /*contenedor flexible*/
+    flex-direction: column;/*distribución de los elementos en columna*/
+    justify-content: center; /*elementos centrados longitudinalmente*/
+}
+.principal .contenedor .nuevasMejoras h2{
+    margin-bottom: 20px;/*margen exterior inferior*/
+    letter-spacing: 2px;/*Tamaño entre letras*/
+    font-family: "Geranium"; /*fuente de la letra*/
+    font-size: 35x;/*Tamaño letras*/
+    color: #009999;/*color letras*/ 
+}
+.principal .contenedor .nuevasMejoras .noticia{
+    display: flex; /*contenedor flexible*/
+    flex-direction: row;/*distribución de los elementos en columna*/
+    justify-content: space-around; /*elementos con espacio alrededor*/
+    gap: 40px;
+}
+.principal .contenedor .nuevasMejoras .noticia .textonoticia{
+    margin: 30px 20px;/*margenes externos*/
+    width: 400px;
+}
+.principal .contenedor .nuevasMejoras .noticia .textonoticia h4{
+    margin-bottom: 15px;/*margenes externos*/
+    font-size: 25px;/*Tamaño letras*/
+    color: #006c6c;/*color letras*/
+}
+.principal .contenedor .nuevasMejoras .noticia .textonoticia p{
+    font-size: 18px;/*Tamaño letras*/
+    line-height: 28px;/*espacio entre líneas de texto*/
+    font-weight: 200;/*grosor de las letras*/
+    margin-bottom: 30px;/*margenes exteriores*/
+}
+.principal .contenedor .nuevasMejoras .noticia .textonoticia a{
+    cursor: pointer;/*cursor en forma de manita*/
+    font-size: 18px;/*Tamaño letras*/
+    color: #006c6c;/*color letras*/
+    text-decoration: none;/*decoración del texto*/
+    border-bottom: 1px solid transparent;/*borde inferior*/
+}
+.principal .contenedor .nuevasMejoras .noticia .textonoticia a:hover{
+    color: teal;/*color de la letra*/
+    border-bottom: 1px solid #006c6c;/*borde inferior*/
+}
+/*************************************************************/
+/******************* ESTILOS MEDIA QUERY  *********************/
+/*************************************************************/
+@media screen and (max-width: 768px) {
+/********************* ESTILOS GENERALES *********************/
+    .principal{
+        max-width: 450px;/*ancho máximo*/
+        padding: 110px 0 40px 0;/*márgenes interiores para dar espacio alrededor*/
+    }
+/********************* FINAL ESTILOS GENERALES *********************/
+/********************* INFO TEXT *********************/
+    .principal .contenedor .infoText{
+        width: 100%;/*ancho*/
+    }
+    .principal .contenedor .infoText h1{
+        font-size: 30px;/*Tamaño letras*/
+        line-height: 45px;/*espacio entre líneas de texto*/
+    }
+    .principal .contenedor .infoText h2{
+        font-family: Arial, Helvetica, sans-serif; /*fuente de la letra*/
+       font-size: 16px;/*Tamaño letras*/
+       font-weight: 100;/*grosor de las letras*/
+       letter-spacing: 1px;/*Tamaño letras*/
+       line-height: 30px;/*espacio entre líneas de texto*/
+    }
+    .principal .contenedor .infoText .blueButton{
+        margin: 20px 0px;/*margen exterior*/
+        font-size: 16px;/*Tamaño letras*/
+        width: 270px;/*ancho*/
+        padding: 15px;/*margenes internos*/
+    }
+    .principal .contenedor .infoText .link{
+        font-size: 16px;/*Tamaño letras*/
+    }
+/********************* FINAL INFO TEXT *********************/
+
+/********************* INFO IMG *********************/
+    .principal .contenedor .infoImg .imgScreen{
+        height: 220px;/*Tamaño imagen*/
+    }
+/********************* FINAL INFO IMG *********************/
+
+/********************* INFO APP *********************/
+    .principal .contenedor .infoApp{
+        width: 100%;/*ancho*/
+        padding: 30px;/*márgenes internos*/
+        gap: 30px;/*espacio entre los elementos*/
+    }
+    .principal .contenedor .infoApp .appDescription h2{
+        font-size: 25px;/*Tamaño letras*/
+        padding: 20px 20px 5px  20px;/*márgenes internos*/
+    }
+    .principal .contenedor .infoApp .appDescription p{
+        font-size: 15px;/*Tamaño letras*/
+        line-height: 20px;/*espacio entre líneas de texto*/
+    }
+/********************* FINAL APP *********************/
+
+/********************* NOTICIAS *********************/
+    .principal .contenedor .nuevasMejoras{
+        width: 100%;
+        margin-top: -30px;/*margen exterior superior*/
+    }
+    .principal .contenedor .nuevasMejoras h2{
+        font-size: 30px;/*Tamaño letras*/
+        margin-left: 20px;/*margen exterior superior*/
+    }
+    .principal .contenedor .nuevasMejoras .noticia{
+        gap: 25px;
+    }
+    .principal .contenedor .nuevasMejoras .noticia .textonoticia{
+        margin: 30px 20px;/*margenes externos*/
+    }
+    .principal .contenedor .nuevasMejoras .noticia .textonoticia h4{
+        font-size: 18px;/*Tamaño letras*/
+    }
+    .principal .contenedor .nuevasMejoras .noticia .textonoticia p{
+        font-size: 15px;/*Tamaño letras*/
+        line-height: 25px;/*espacio entre líneas de texto*/
+        margin-bottom: 20px;/*margen exterior superior*/
+    }
+    .principal .contenedor .nuevasMejoras .noticia .textonoticia a{
+        font-size: 16px;/*Tamaño letras*/
+    }
+/********************* FIN NOTICIAS *********************/
+
+}
