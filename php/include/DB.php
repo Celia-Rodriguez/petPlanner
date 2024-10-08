@@ -49,7 +49,7 @@ class DB{
 
         //Comprobar usuario y contraseña
         public static function checkUser($email, $password){
-            $sql = "SELECT email, password FROM \"user\"  WHERE email= :email;";
+            $sql = "SELECT email password FROM \"user\"  WHERE email= :email;";
             $params = [':email' => $email];
 
             $result = self::executeQuery($sql, $params);
