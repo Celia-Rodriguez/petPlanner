@@ -9,7 +9,6 @@
         
         //si es correcto, obtenemos los datos del usuario y los guardamos en una variable de sesión.
         if($result){
-            session_start();
             $userInfo = DB::getUser($email);
             $userData = $userInfo->fetch();
             if($userData){
