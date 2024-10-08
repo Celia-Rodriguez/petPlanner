@@ -1,0 +1,67 @@
+19-09-2024 18:14:14-- PDO Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+19-09-2024 18:14:14-- PDO Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+19-09-2024 18:14:48-- PDO Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+19-09-2024 18:14:58-- PDO Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+08-10-2024 15:31:27-- PDO Exception: could not find driver
+08-10-2024 15:33:43-- PDO Exception: could not find driver
+08-10-2024 15:33:59-- PDO Exception: SQLSTATE[08006] [7] FATAL:  Authentication error, reason: "Invalid format for user or db_name"
+FATAL:  Authentication error, reason: "Invalid format for user or db_name"
+08-10-2024 15:34:25-- PDO Exception: SQLSTATE[08006] [7] FATAL:  Authentication error, reason: "Invalid format for user or db_name"
+FATAL:  Authentication error, reason: "Invalid format for user or db_name"
+08-10-2024 15:34:58-- PDO Exception: SQLSTATE[08006] [7] error received from server in SCRAM exchange: Wrong password
+08-10-2024 15:37:55-- PDO Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+08-10-2024 15:50:04-- PDO Exception: SQLSTATE[08006] [7] error received from server in SCRAM exchange: Wrong password
+08-10-2024 16:12:28-- PDO Exception: SQLSTATE[08006] [7] FATAL:  Authentication error, reason: "Invalid format for user or db_name"
+FATAL:  Authentication error, reason: "Invalid format for user or db_name"
+08-10-2024 16:12:54-- PDO Exception: SQLSTATE[42703]: Undefined column: 7 ERROR:  column "email" does not exist
+LINE 1: SELECT email FROM user WHERE email= $1;
+               ^
+08-10-2024 16:20:46-- PDO Exception: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "user"
+LINE 1: INSERT INTO user (nombre, email, password, pregunta_segurida...
+                    ^
+08-10-2024 16:27:50-- PDO Exception: SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "user_pet" does not exist
+LINE 1: SELECT id_pet FROM "user_pet" WHERE id_user = $1;
+                           ^
+08-10-2024 16:27:51-- PDO Exception: SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "user_pet" does not exist
+LINE 1: SELECT id_pet FROM "user_pet" WHERE id_user = $1;
+                           ^
+08-10-2024 16:28:33-- PDO Exception: SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "user_pet" does not exist
+LINE 1: SELECT id_pet FROM "user_pet" WHERE id_user = $1;
+                           ^
+08-10-2024 16:49:27-- PDO Exception: SQLSTATE[42883]: Undefined function: 7 ERROR:  function addnuevamascota(unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown) does not exist
+LINE 1: SELECT addNuevaMascota('4','Pepo','2022-09-01','Perro','Mest...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+08-10-2024 17:03:47-- PDO Exception: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "."
+LINE 2:         JOIN "user_pet" ON user.id= user_pet.id_user 
+                                       ^
+08-10-2024 17:03:48-- PDO Exception: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "."
+LINE 2:         JOIN "user_pet" ON user.id= user_pet.id_user 
+                                       ^
+08-10-2024 17:03:56-- PDO Exception: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "."
+LINE 2:         JOIN "user_pet" ON user.id= user_pet.id_user 
+                                       ^
+08-10-2024 17:03:56-- PDO Exception: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "."
+LINE 2:         JOIN "user_pet" ON user.id= user_pet.id_user 
+                                       ^
+08-10-2024 17:06:33-- PDO Exception: SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 1 parameters, but prepared statement "pdo_stmt_00000001" requires 0
+08-10-2024 17:09:13-- PDO Exception: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "`"
+LINE 1: INSERT INTO "pet_reminder"(`id_pet`, `detalles`, `color_remi...
+                                   ^
+08-10-2024 17:12:41-- PDO Exception: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "`"
+LINE 1: INSERT INTO "pet_reminder"(`id_pet`, `detalles`, `color_remi...
+                                   ^
+08-10-2024 17:36:08-- PDO Exception: SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "`"
+LINE 1: INSERT INTO "pet_reminder"(`id_pet`, `detalles`, `color_remi...
+                                   ^
+08-10-2024 17:38:40-- PDO Exception: SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 1 parameters, but prepared statement "pdo_stmt_00000001" requires 0
+08-10-2024 17:39:51-- PDO Exception: SQLSTATE[26000]: Invalid sql statement name: 7 ERROR:  prepared statement "pdo_stmt_00000001" does not exist
+08-10-2024 17:39:59-- PDO Exception: SQLSTATE[26000]: Invalid sql statement name: 7 ERROR:  prepared statement "pdo_stmt_00000001" does not exist
+08-10-2024 17:40:47-- PDO Exception: SQLSTATE[26000]: Invalid sql statement name: 7 ERROR:  prepared statement "pdo_stmt_00000001" does not exist
+08-10-2024 17:55:10-- PDO Exception: SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 0 parameters, but prepared statement "pdo_stmt_00000001" requires 1
+08-10-2024 17:57:40-- PDO Exception: SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 0 parameters, but prepared statement "pdo_stmt_00000001" requires 1
+08-10-2024 17:58:54-- PDO Exception: SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 0 parameters, but prepared statement "pdo_stmt_00000001" requires 1
+08-10-2024 18:03:17-- PDO Exception: SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 1 parameters, but prepared statement "pdo_stmt_00000001" requires 0
+08-10-2024 18:04:02-- PDO Exception: SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 0 parameters, but prepared statement "pdo_stmt_00000001" requires 1
+08-10-2024 18:04:02-- PDO Exception: SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 1 parameters, but prepared statement "pdo_stmt_00000001" requires 0
+08-10-2024 18:15:19-- PDO Exception: SQLSTATE[08P01]: <<Unknown error>>: 7 ERROR:  bind message supplies 0 parameters, but prepared statement "pdo_stmt_00000001" requires 1

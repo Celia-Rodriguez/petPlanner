@@ -1,15 +1,19 @@
 <?php
-
-    class DB{
+class DB{
 
     //Ejecutar consulta sql
     protected static function executeQuery($sql, $params = []){
         $opc = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
-        $dsn = "mysql:host=localhost;dbname=petPlanner";
-        $dbUser = 'root';
-        $dbPassword ='';
-        try{
-            $dbPetPlanner = new PDO($dsn, $dbUser, $dbPassword, $opc);
+        $host = 'aws-0-eu-west-3.pooler.supabase.com'; // Cambia esto si es necesario
+        $port = '6543'; // Puerto por defecto de PostgreSQL
+        $dbname = 'postgres'; // El nombre de tu base de datos
+        $user = 'postgres.zfbdzsckvnxknahipvnh'; // El nombre de usuario (generalmente "postgres")
+        $password = 'PetPlanner_proyect'; // Tu contraseña o la clave anónima
+        
+        try {
+            // Crear una conexión PDO
+            $dsn = "pgsql:host=$host;port=$port;dbname=$dbname;user=$user;password=$password";
+            $dbPetPlanner = new PDO($dsn);
             $dbPetPlanner->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //al preaprar la query se protege contra inyecciones SQL
             $stmt = $dbPetPlanner->prepare($sql);
@@ -29,7 +33,7 @@
 
         //comprobar usuario
         public static function issetEmail($email){
-            $sql = "SELECT email FROM user WHERE email= :email;";
+            $sql = "SELECT email FROM \"user\" WHERE email= :email;";
             $params= [':email' => $email];
 
             $result = self::executeQuery($sql, $params);
@@ -45,7 +49,7 @@
 
         //Comprobar usuario y contraseña
         public static function checkUser($email, $password){
-            $sql = "SELECT email, password FROM user WHERE email= :email;";
+            $sql = "SELECT email, password FROM \"user\"  WHERE email= :email;";
             $params = [':email' => $email];
 
             $result = self::executeQuery($sql, $params);
@@ -68,7 +72,7 @@
 
         //Obtener los datos del usuario
         static public function getUser($userEmail){
-            $sql = "SELECT * FROM user WHERE email = '$userEmail'"; 
+            $sql = "SELECT * FROM \"user\"  WHERE email = '$userEmail'"; 
             $params = [':userEmail' => $userEmail];
 
             $result = self::executeQuery($sql);
@@ -83,7 +87,7 @@
         //insertar registro Usuario
         static public function insertUser($userName,$email,$password,$question,$answer){
             $password = password_hash($password,PASSWORD_DEFAULT);
-            $sql = "INSERT INTO user (nombre, email, password, pregunta_seguridad, respuesta_seguridad, tipo) 
+            $sql = "INSERT INTO \"user\"  (nombre, email, password, pregunta_seguridad, respuesta_seguridad, tipo) 
             VALUES (:userName, :email, :password, :question, :answer,'user');";
             $params= [
                 ':userName' => $userName,
@@ -106,7 +110,7 @@
 /*-----------------------------------------------------------------------------*/
         //comprobar datos
         public static function getDataUser($email){
-            $sql = "SELECT id, email, pregunta_seguridad, respuesta_seguridad FROM user WHERE email= :email;";
+            $sql = "SELECT id, email, pregunta_seguridad, respuesta_seguridad FROM \"user\"  WHERE email= :email;";
             $params = [':email' => $email];
 
             $result = self::executeQuery($sql, $params);
@@ -122,7 +126,7 @@
         public static function updatePassword($id, $password){
             try{
                 $password = password_hash($password,PASSWORD_DEFAULT);
-                $sql = "UPDATE user SET password = :password WHERE id = :id;";
+                $sql = "UPDATE \"user\"  SET password = :password WHERE id = :id;";
                 $params = [
                     ':id' => $id,
                     ':password' => $password
@@ -146,7 +150,7 @@
 
         public static function updateUser($id,$name,$img){
             try{
-                $sql = "UPDATE user SET nombre= :name, foto = :img WHERE id = :id;";
+                $sql = "UPDATE \"user\"  SET nombre= :name, foto = :img WHERE id = :id;";
                 $params= [
                     ':name' => $name,
                     ':img' => $img,
@@ -167,7 +171,7 @@
 
         public static function updateUserSinFoto($id, $name){ 
             try{
-                $sql = "UPDATE user SET nombre= :name WHERE id= :id;";
+                $sql = "UPDATE \"user\"  SET nombre= :name WHERE id= :id;";
                 $params=[
                     ':name' => $name,
                     ':id' => $id
@@ -188,7 +192,7 @@
         //Comprobar usuario y contraseña
         public static function checkUserPassword($idUser, $password){
             try{
-                $sql = "SELECT password FROM user WHERE id= :idUser;";
+                $sql = "SELECT password FROM \"user\"  WHERE id= :idUser;";
                 $params=[
                     ':idUser' => $idUser
                 ];
@@ -218,7 +222,7 @@
 
         public static function updateEmailUser($userId,$userEmail){
             try{
-                $sql = "UPDATE user SET email= :userEmail WHERE id = :userId;";
+                $sql = "UPDATE \"user\"  SET email= :userEmail WHERE id = :userId;";
                 $params=[
                     ':userEmail' => $userEmail,
                     ':userId' => $userId
@@ -242,7 +246,7 @@
         //Ver si el usuario tiene mascotas asociadas
         static public function numeroMascotasUsuario($userId){
             try{
-                $sql = "SELECT COUNT(*) FROM user_pet WHERE id_user= :userId";
+                $sql = "SELECT COUNT(*) FROM \"user_pet\" WHERE id_user= :userId";
                 $params=[':userId' => $userId];
 
                 $result = self::executeQuery($sql, $params);
@@ -256,7 +260,7 @@
 
         static public function eliminarUsuario($userId){
             try{
-                $sql = "DELETE FROM user WHERE id= :userId";
+                $sql = "DELETE FROM \"user\" WHERE id= :userId";
                 $params=[':userId' => $userId];
 
                 $result = self::executeQuery($sql, $params);
@@ -280,7 +284,7 @@
 
         //Obtener listado de códigos de las mascotas
         static public function getCodigos(){
-            $sql = "SELECT codigo FROM pet";
+            $sql = "SELECT codigo FROM \"pet\"";
             $result = self::executeQuery($sql);
             $codigos = [];
             while ($row = $result->fetch()) {
@@ -305,7 +309,7 @@
 
         //asociar mascota a usuario
         static public function linkUserPet($idUser,$idPet){
-            $sql = "INSERT INTO user_pet (id_user,id_pet) VALUES (:idUser, :idPet);";
+            $sql = "INSERT INTO \"user_pet\" (id_user,id_pet) VALUES (:idUser, :idPet);";
             $params=[
                 ':idUser' => $idUser,
                 ':idPet' => $idPet
@@ -326,7 +330,7 @@
 
         //Obtener mascotas de usuario por su id
         static public function getPets($idUser){
-            $sql = "SELECT id_pet FROM user_pet WHERE id_user = :idUser;";
+            $sql = "SELECT id_pet FROM \"user_pet\" WHERE id_user = :idUser;";
             $params=[':idUser' => $idUser];
 
             $result = self::executeQuery($sql, $params);
@@ -339,7 +343,7 @@
 
         //Obtener datos de mascota a partir de su id
         static public function getPet($idPet){
-            $sql = "SELECT * FROM pet WHERE id = :idPet;";
+            $sql = "SELECT * FROM \"pet\" WHERE id = :idPet;";
             $params=[':idPet' => $idPet];
 
             $result = self::executeQuery($sql, $params);
@@ -349,7 +353,7 @@
 
         //Obtener datos de mascota a partir de su código
         static public function getPetByCode($petCode){
-            $sql = "SELECT * FROM pet WHERE codigo = :petCode;";
+            $sql = "SELECT * FROM \"pet\" WHERE codigo = :petCode;";
             $params=[':petCode' => $petCode];
 
             $result = self::executeQuery($sql, $params);
@@ -359,7 +363,7 @@
 
         //obtener registro de mascota con usuario
         static public function getUserPet($idUser, $idPet){
-            $sql = "SELECT * FROM user_pet WHERE id_user = :idUser AND id_pet = :idPet;";
+            $sql = "SELECT * FROM \"user_pet\" WHERE id_user = :idUser AND id_pet = :idPet;";
             $params =[
                 ':idUser' => $idUser,
                 ':idPet' => $idPet
@@ -375,7 +379,7 @@
 /*-----------------------------------------------------------------------------*/
     static public function updatePet($petId,$petName,$petDate,$petType,$petBreed,$petWeight,$petGender,$petChip,$petImg){
         try{
-            $sql = "UPDATE pet SET nombre= :petName, fecha_nacimiento = :petDate, tipo= :petType, raza= :petBreed, peso= :petWeight,
+            $sql = "UPDATE \"pet\" SET nombre= :petName, fecha_nacimiento = :petDate, tipo= :petType, raza= :petBreed, peso= :petWeight,
              genero= :petGender, chip= :petChip, foto= :petImg WHERE id= :petId;";
             $params=[
                 ':petName' => $petName,
@@ -403,7 +407,7 @@
 
     static public function updatePetSinFoto($petId,$petName,$petDate,$petType,$petBreed,$petWeight,$petGender,$petChip){
         try{
-            $sql = "UPDATE pet SET nombre= :petName, fecha_nacimiento= :petDate, tipo= :petType, raza= :petBreed,
+            $sql = "UPDATE \"pet\" SET nombre= :petName, fecha_nacimiento= :petDate, tipo= :petType, raza= :petBreed,
              peso= :petWeight, genero= :petGender, chip= :petChip WHERE id= :petId;";
             $params=[
                 ':petName' => $petName,
@@ -433,7 +437,7 @@
     //obtener cuantos usuarios tienen esta mascota
     static public function numeroUsuariosMascota($petId){
         try{
-            $sql = "SELECT COUNT(*) FROM user_pet WHERE id_pet= :petId;";
+            $sql = "SELECT COUNT(*) FROM \"user_pet\" WHERE id_pet= :petId;";
             $params=[':petId' => $petId];
 
             $result = self::executeQuery($sql, $params);
@@ -448,7 +452,7 @@
     //eliminar registro
     static public function eliminarAsociacionUserPet($userId, $petId){
         try{
-            $sql = "DELETE FROM user_pet WHERE id_pet= :petId AND id_user= :userId;";
+            $sql = "DELETE FROM \"user_pet\" WHERE id_pet= :petId AND id_user= :userId;";
             $params=[
                 ':petId' => $petId,
                 ':userId' => $userId
@@ -471,7 +475,7 @@
     //obtener cuantos recordatorios tienen esta mascota
     static public function numeroRecordatoriosMascota($petId){
         try{
-            $sql = "SELECT COUNT(*) FROM pet_reminder WHERE id_pet= :petId;";
+            $sql = "SELECT COUNT(*) FROM \"pet_reminder\" WHERE id_pet= :petId;";
             $params=[':petId' => $petId];
 
             $result = self::executeQuery($sql, $params);
@@ -486,7 +490,7 @@
     //eliminar recordatorios mascota
     static public function eliminarRecordatoriosMascota($petId){
         try{
-            $sql = "DELETE FROM pet_reminder WHERE id_pet= :petId;";
+            $sql = "DELETE FROM \"pet_reminder\" WHERE id_pet= :petId;";
             $params=[':petId' => $petId];
 
             $result = self::executeQuery($sql, $params);    
@@ -506,7 +510,7 @@
     //eliminar mascota
     static public function eliminarMascota($petId){
         try{
-            $sql = "DELETE FROM pet WHERE id= :petId;";
+            $sql = "DELETE FROM \"pet\" WHERE id= :petId;";
             $params=[':petId' => $petId];
 
             $result = self::executeQuery($sql, $params);
@@ -530,7 +534,7 @@
 
     static public function getAllUsers(){
         try{
-            $sql = "SELECT id,nombre,email,tipo FROM user;";
+            $sql = "SELECT id,nombre,email,tipo FROM \"user\";";
             $result = self::executeQuery($sql);
             $users = $result->fetchAll();
             return $users;
@@ -542,7 +546,7 @@
 
     static public function changeTypeUser($id, $tipo){
         try{
-            $sql = "UPDATE user SET tipo= :tipo WHERE id= :id;"; 
+            $sql = "UPDATE \"user\" SET tipo= :tipo WHERE id= :id;"; 
             $params=[
                 ':tipo' => $tipo,
                 ':id' => $id

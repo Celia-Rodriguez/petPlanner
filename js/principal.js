@@ -376,7 +376,7 @@ function showTypeReminder(){
                 }//recordatorios distinto de vacio
             },
             error: function(error){ //error
-                console.log("error ",error);
+                //console.log("error ",error);
             }
         });
     
@@ -455,7 +455,6 @@ function verReminder(mascotas){
             recordatorios = response;
             if(recordatorios!=""){
                 recordatoriosOrdenados =  recordatorios.sort(orderDates);
-
                 //sacamos lo ids de los div que acabamos de pintar
                 let existingReminderDates = $('.dates').map(function () {
                     return this.id;
@@ -464,7 +463,7 @@ function verReminder(mascotas){
                 fechasConRecordatorios = recordatorios.map(item=>item[4]); //esta contiene fechas repetidas
                 let fechasReminder = [...new Set(fechasConRecordatorios)]; //sin fechas repes
                 for(let i =0; i< fechasReminder.length;i++){
-                    if (!existingReminderDates.includes(fechasReminder[i])) {
+                    if (!existingReminderDates.includes(fechasReminder[i])) {                       
                         dates= new Date(fechasReminder[i]);
                         hoy = new Date();
                         if(dates.getMonth() +1 == hoy.getMonth() +1){
@@ -504,8 +503,7 @@ function verReminder(mascotas){
                         if(date.getMonth() +1 == hoy.getMonth() +1){
                             if(date.getDate() >= hoy.getDate()){
                         // mostramos solo los del semana?
-                                if (!existingReminderIds.includes(idReminder[cont])) {
-
+                                if (!existingReminderIds.includes(idReminder[cont])) {                                  
                                     var html_card= "<div id='"+idReminder[cont]+"' class='tarjetaRecordatorio' style='background-color:"+colorReminder[cont]+"';><div id='"+idPet[cont]+"' class='datosRecordatorio'> <h4>"+typeReminder[cont]+"</h4><h6>"+detalleReminder[cont]+"</h6></div><div class='fechaRecordatorio'><p>"+namePet+"</p></div></div>";
                                     $('#'+plannedDate[cont]).append(html_card);
 
