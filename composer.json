@@ -1,0 +1,11 @@
+{
+    "require": {
+      "php": "^7.4 || ^8.0",
+      "your-dependency": "^version"
+    },
+    "scripts": {
+      "post-install-cmd": [
+        "php -S localhost:8000 -t public" 
+      ]
+    }
+  }
