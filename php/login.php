@@ -1,4 +1,7 @@
 <?php
+
+    session_start();
+
     include('include/DB.php');
 
     $email = $_POST['email'];
